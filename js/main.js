@@ -1,6 +1,6 @@
-const mainImg = document.querySelector(".main-img");
+/*const mainImg = document.querySelector(".main-img");
 mainImg.setAttribute("width","600px");
-mainImg.setAttribute("height","600px");
+mainImg.setAttribute("height","600px");*/
 const linealImgs = document.querySelector(".lineal-imgs");
 const current_page = document.querySelector('.pages .page.is-active');
 
@@ -23,11 +23,11 @@ window.onload = () => {
 }
 
 function switchPage(page_id) {
-    console.log(page_id);
-
+    
     current_page.classList.remove('is-active');
-
+    
     const next_page = document.querySelector('.pages .page[data-page="${page_id}"]');
+
     next_page.classList.add('is-active');
 
     for(let i = 1; i < numImages[page_id-2]; i++){
