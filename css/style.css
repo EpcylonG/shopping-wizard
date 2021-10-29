@@ -1,4 +1,6 @@
-
+:root{
+    --main:#abedd8;
+}
 
   *,
   *::before,
@@ -143,7 +145,7 @@ li {
 @media only screen and (max-width: 768px) {
     .menu {
     position: fixed;
-    top: 0
+    top: 0;
     left: -100%;
     width: 80%;
     max-width: 40rem;
@@ -223,4 +225,29 @@ li {
     .nav-link.icon {
     display: none;
     }
+}
+
+
+.footer-container{
+    display: flex;
+    background-color: var(--main);
+    font-size: 20px;
+    padding: 20px;
+}
+
+.footer_link-list{
+    width: 25%;
+    padding: 20px;
+}
+
+.footer_link-list span{
+    color: #333;
+    display: block;
+    font-weight: 700;
+    margin: 1rem auto;
+    font-size: 25px;
+}
+
+.footer_link-list li{
+    padding-top: 13px;
 }
