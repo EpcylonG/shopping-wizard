@@ -226,7 +226,7 @@ li {
     }
 }
 
-/* Product Page Style */
+/* Product Page Style Magnetic */
 
 .type-img img {
     width: 100%;
@@ -243,7 +243,7 @@ li {
     border: 2px solid rgba(24, 24, 24, 0.616);
 }
 
-#all-product-page-magnetic {
+#all-product-page {
     display: grid;
     grid-template-columns: 10% 45% 45%;
 }
