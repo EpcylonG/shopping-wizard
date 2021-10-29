@@ -1,10 +1,7 @@
-/*const mainImg = document.querySelector(".main-img");
-mainImg.setAttribute("width","600px");
-mainImg.setAttribute("height","600px");*/
-const linealImgs = document.querySelector(".lineal-imgs");
 const current_page = document.querySelector('.pages .page.is-active');
 
 const numImages = [5,5,6,6];
+const folderImages = ["animal-kingdom-bottle", "magnetic-bottle", "portable-cup-bottle", "smooth-bottle"];
 
 window.onload = () => {
     const tab_switchers = document.querySelectorAll('[data-switcher]');
@@ -16,32 +13,54 @@ window.onload = () => {
         tab_switcher.addEventListener('click', () => {
             document.querySelector('.nav-list .tab.is-active').classList.remove('is-active');
             tab_switcher.parentNode.classList.add('is-active');
-            console.log("fuera " + page_id);
+
             switchPage(page_id);
         });
     }
 }
 
-function switchPage(page_id) {
+function switchPage (page_id) {
     
+    const current_page = document.querySelector('.pages .page.is-active');
     current_page.classList.remove('is-active');
     
-    const next_page = document.querySelector('.pages .page[data-page="${page_id}"]');
-
+    const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
     next_page.classList.add('is-active');
 
-    for(let i = 1; i < numImages[page_id-2]; i++){
-        createImage(i);
-    }
+    next_page.innerHTML = "";
+    if(page_id != 1) createDiv(next_page, numImages[page_id-2], folderImages[next_page.dataset.page-2]);
+    
 }
 
-function createImage(i){
-    const linealImg = document.createElement("img");
-    linealImg.setAttribute("class","lineal-img");
-    linealImg.setAttribute("width","100px");
-    linealImg.setAttribute("height","100px");
-    linealImg.setAttribute("src","assets/img/magnetic-bottle/" + i + "-magnetic.jpg");
-    linealImgs.appendChild(linealImg); 
+function createDiv(page, id, folder){
+    const divElement = document.createElement("div");
+    const selectionElement = document.createElement("selection");
+    const imgMainElement = document.createElement("img");
+    imgMainElement.setAttribute("class","main-img");
+    imgMainElement.setAttribute("width","600px");
+    imgMainElement.setAttribute("height","600px");
+    selectionElement.appendChild(imgMainElement);
+    divElement.appendChild(selectionElement);
+    const sectionLinealElement = document.createElement("section");
+    sectionLinealElement.setAttribute("class","lineal-imgs");
+    
+    createImage(folder, id, imgMainElement, sectionLinealElement);
+
+    selectionElement.appendChild(sectionLinealElement);
+    divElement.appendChild(selectionElement);
+    page.appendChild(divElement);
+}
+
+function createImage(folder, id, main, lineal){
+    main.setAttribute("src","assets/img/" + folder + "/1.jpg");
+    for(let i = 1; i < id; i++){
+        const linealImg = document.createElement("img");
+        linealImg.setAttribute("class","lineal-img");
+        linealImg.setAttribute("width","100px");
+        linealImg.setAttribute("height","100px");
+        linealImg.setAttribute("src","assets/img/" + folder + "/" + i + ".jpg");
+        lineal.appendChild(linealImg); 
+    }
 }
 
 const linealImgHover = document.querySelectorAll(".lineal-img");
@@ -58,3 +77,5 @@ for(let img of linealImgHover){
 function setImg(src){
     mainImg.setAttribute("src", src);
 }
+
+//hacer zoom imagen main
