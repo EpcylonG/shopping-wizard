@@ -16,7 +16,9 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
-
+body {
+    background-color: white;
+}
 
 h1,
 h2,
@@ -246,7 +248,6 @@ li {
 #all-product-page {
     display: grid;
     grid-template-columns: 10% 35% 55%;
-    grid-template-rows: 1px;
 }
 
 #product-info {
@@ -292,8 +293,7 @@ li {
     border: 10px black;
 }
 
-=======
-
+/*footer*/
 .footer-container{
     display: flex;
     background-color: var(--main);
@@ -316,7 +316,7 @@ li {
 }
 
 .footer_link-list li{
-    padding-top: 13px;
+    padding-top: 7px;
 }
 /* switcher */
 
@@ -328,7 +328,7 @@ li {
 }
 
 body {
-    background-color: #EEE;
+    background-color: #abedd818;
 }
 
 header {
@@ -383,7 +383,8 @@ main {
 }
 
 .pages {
-    margin-top: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 50px 30px;
     border-radius: 8px;
     background-color: #FFF;
