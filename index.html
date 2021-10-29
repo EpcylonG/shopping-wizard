@@ -7,9 +7,11 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
     <title>PURE WATER</title>
 </head>
 <body>
+    <header>
     <nav class="nav">
         <div class="navigation container">
             <div class="logo">
@@ -28,23 +30,23 @@
                 </div>
 
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Pure Water</a>
+                    <li class="tab is-active">
+                        <a class="nav-link" data-switcher data-tab="1">Pure Water</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="2">Animal Kingdom</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="3">Magnetic</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="4">Portable</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="5">Smooth</a>
                     </li>
                     <li class="nav-item">
-                        <a href="product.html" class="nav-link">Animal Kingdom</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">Magnetic</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Portable</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="account.html" class="nav-link">Smooth</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+                        <a class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
                     </li>
                 </ul>
             </div>
@@ -58,5 +60,30 @@
             </div>
         </div>
     </nav>
+</header>
+<main>
+    <section class="pages">
+        <div class="page is-active" data-page="1">
+            <h2>Page 1</h2>
+            <p>Welcome to homepage</p>
+        </div>
+        <div class="page" data-page="2">
+            <h2>Page 2</h2>
+            <p>Welcome to animal</p>
+        </div>
+        <div class="page" data-page="3">
+            <h2>Page 3</h2>
+            <p>Welcome to magnetic</p>
+        </div>
+        <div class="page" data-page="4">
+            <h2>Page 4</h2>
+            <p>Welcome to portable</p>
+        </div>
+        <div class="page" data-page="5">
+            <h2>Page 5</h2>
+            <p>Welcome to Smooth</p>
+        </div>
+    </section>
+</main>
 </body>
 </html>
