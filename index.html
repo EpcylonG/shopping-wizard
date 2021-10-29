@@ -7,9 +7,11 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
     <title>PURE WATER</title>
 </head>
 <body>
+    <header>
     <nav class="nav">
         <div class="navigation container">
             <div class="logo">
@@ -28,23 +30,23 @@
                 </div>
 
                 <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link">Pure Water</a>
+                    <li class="tab is-active">
+                        <a class="nav-link" data-switcher data-tab="1">Pure Water</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="2">Animal Kingdom</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="3">Magnetic</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="4">Portable</a>
+                    </li>
+                    <li class="tab">
+                        <a class="nav-link" data-switcher data-tab="5">Smooth</a>
                     </li>
                     <li class="nav-item">
-                        <a href="product.html" class="nav-link">Animal Kingdom</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">Magnetic</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">Portable</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="account.html" class="nav-link">Smooth</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="cart.html" class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+                        <a class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
                     </li>
                 </ul>
             </div>
@@ -60,6 +62,32 @@
     </nav>
     <div id="all-product-page">
     <section class="type-img">
+</header>
+<main>
+    <section class="pages">
+        <div class="page is-active" data-page="1">
+            <h2>Page 1</h2>
+            <p>Welcome to homepage</p>
+        </div>
+        <div class="page" data-page="2">
+            <h2>Page 2</h2>
+            <p>Welcome to animal</p>
+        </div>
+        <div class="page" data-page="3">
+            <h2>Page 3</h2>
+            <p>Welcome to magnetic</p>
+        </div>
+        <div class="page" data-page="4">
+            <h2>Page 4</h2>
+            <p>Welcome to portable</p>
+        </div>
+        <div class="page" data-page="5">
+            <h2>Page 5</h2>
+            <p>Welcome to Smooth</p>
+        </div>
+    </section>
+</main>
+<section class="type-img">
         <img src="assets/img/magnetic-bottle/all-magnetic.jpg" alt="Botellas con estampado magnetico">
         <img src="assets/img/magnetic-bottle/black-magnetic.jpg" alt="Botella con estampado magnetico negro">
     </section>
@@ -101,5 +129,50 @@
         <button>Buy</button>
         </section>
     </div>
+    </section>
+    <footer class="footer-container">
+        <div class="footer_link-list">
+            <span>Compras</span>
+            <ul>
+                <li>Cómo comprar</li>
+                <li>Formas de pago</li>
+                <li>Gastos de envío</li>
+                <li>Preguntas frecuentes</li>
+                <li>Opiniones de clientes</li>
+            </ul>
+        </div>
+        <div class="footer_link-list">
+            <span>Quiénes somos</span>
+            <ul>
+                <li>Quiénes somos</li>
+                <li>Afiliados</li>
+                <li>Proveedores</li>
+                <li>Aviso legal</li>
+                <li>Privacidad</li>
+            </ul>
+        </div>
+        <div class="footer_link-list">
+            <span>Contactar</span>
+            <ul>
+                <li>Centro de soporte</li>
+                <li>Contacto</li>
+                <li>Devoluciones y Garantías</li>
+                <li>Publicidad</li>
+                <li>Trabaja con nosotros</li>
+                <li>Política de cookies</li>
+            </ul>
+        </div>
+        <div class="footer_link-list">
+            <span>Comunidad</span>
+            <ul>
+                <li>Instagram</li>
+                <li>Twitter</li>
+                <li>Facebook</li>
+                <li>TikTok</li>
+                <li>YouTube</li>
+                <li>Twitch</li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
