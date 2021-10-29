@@ -1,5 +1,6 @@
 :root{
     --main:#abedd8;
+    --text:#243a6f;
 }
 
   *,
@@ -233,6 +234,7 @@ li {
     background-color: var(--main);
     font-size: 20px;
     padding: 20px;
+    color: var(--text);
 }
 
 .footer_link-list{
