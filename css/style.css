@@ -16,8 +16,6 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
-
-
 h1,
 h2,
 h3,
@@ -236,7 +234,7 @@ li {
 
 .type-img img {
     width: 100%;
-    margin-top: 30%;
+    margin-top: 70%;
 }
 
 .big-img img {
@@ -245,12 +243,13 @@ li {
 
 .colors-img img {
     width: 10%;
+    border-radius: 100px;
+    border: 2px solid rgba(24, 24, 24, 0.616);
 }
 
 #all-product-page {
     display: grid;
-    grid-template-columns: 10% 35% 55%;
-    grid-template-rows: 1px;
+    grid-template-columns: 10% 45% 45%;
 }
 
 #product-info {
@@ -258,34 +257,43 @@ li {
     margin-left: 50px;
 }
 #product-info h1{
-    font-size: 35px;
-    font-weight: bold;
+    font-size: 45px;
     text-shadow: 2px 2px 0 #abedd8;
     vertical-align: bottom;
-    margin-top: 20px;
-    /*margin-left: 30px;*/
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 #product-info p{
-    color: rgb(24, 24, 24);
+    color: rgba(24, 24, 24, 0.616);
     font-size: 20px;
+    margin-bottom: 2px;
+}
+#product-info #last-p {
+    border-bottom: solid 1px rgba(24, 24, 24, 0.616);
 }
 #product-info h2 {
-    font-size: 30px;
-    text-shadow: 2px 2px 0 #abedd8;
+    font-size: 20px;
+    text-shadow: 2px 2px 0 #abedd8a2;
+    color: rgba(0, 0, 0, 0.589);
     margin-top: 20px;
 }
-#product-info button {
+#product-info #first-buy-botton {
     background-color: #abedd8;
-    margin-right: 70%;
-    height: 40px;
-    margin-top: 20px;
+    width: 130px;
+    height: 50px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    margin-left: 20px;
 }
 .price-product-page{
     color: black !important;
     font-weight: bold !important;
     font-size: 30px !important;
+    border: none !important;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.274);
+    padding: 25px;
 }
 #size-form {
     color: rgb(24, 24, 24);
@@ -295,7 +303,21 @@ li {
     width: 150px;
     border: 10px black;
 }
+.prize-button {
+    background-color: white;
+    height: 50px;
+    width: 100px;
+    margin-top: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#prize-buttons {
+    border-bottom: solid 1px rgba(24, 24, 24, 0.616);
+    padding: 10px;
+}
 
+/*footer*/
 .footer-container{
     display: flex;
     background-color: var(--main);
@@ -318,19 +340,14 @@ li {
 }
 
 .footer_link-list li{
-    padding-top: 13px;
+    padding-top: 7px;
 }
 /* switcher */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Fira Sans', sans-serif;
-}
-
 body {
-    background-color: #EEE;
+    background-color: #abedd818;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 header {
@@ -385,8 +402,8 @@ main {
 }
 
 .pages {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     padding: 50px 30px;
     border-radius: 8px;
     background-color: #FFF;
