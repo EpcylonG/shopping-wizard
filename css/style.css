@@ -140,10 +140,14 @@ li {
     display: none;
 }
 
+.images-container{
+    display: flex;
+}
+
 @media only screen and (max-width: 768px) {
     .menu {
     position: fixed;
-    top: 0
+    top: 0;
     left: -100%;
     width: 80%;
     max-width: 40rem;
