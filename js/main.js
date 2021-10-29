@@ -59,23 +59,22 @@ function createImage(folder, id, main, lineal){
         linealImg.setAttribute("width","100px");
         linealImg.setAttribute("height","100px");
         linealImg.setAttribute("src","assets/img/" + folder + "/" + i + ".jpg");
+        addListener(linealImg, folder, main);
         lineal.appendChild(linealImg); 
     }
 }
 
-const linealImgHover = document.querySelectorAll(".lineal-img");
-
-for(let img of linealImgHover){
+function addListener(img, folder, main){
     img.addEventListener("mouseenter", function( event ) {
-        setImg(event.target.src);
+        setImg(event.target.src, main);
     }, false);
-    img.addEventListener("mouseleave", function( event ) {
-        setImg("assets/img/magnetic-bottle/1-magnetic.jpg");
-    }, false);
+    /*img.addEventListener("mouseleave", function( event ) {
+        setImg("assets/img/" + folder + "/1.jpg", main);
+    }, false);*/
 }
 
-function setImg(src){
-    mainImg.setAttribute("src", src);
+function setImg(src, main){
+    main.setAttribute("src", src);
 }
 
 //hacer zoom imagen main
