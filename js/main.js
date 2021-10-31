@@ -22,42 +22,11 @@ window.onload = () => {
 }
 
 function switchPage (page_id) {
-    
-    //current_page.classList.remove('is-active');
-    
-    /*const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
-    next_page.classList.add('is-active');
-    console.log(next_page);*/
-
-    //next_page.innerHTML = "";
     sectionPages.innerHTML = "";
     if(page_id != 1) createPage(page_id, numImages[page_id-2]);
-    //folderImages[next_page.dataset.page-2]
-    
 }
 
-//create page
-/*
-            h1
-            p
-                Caracteristics
-                p
-                p
-                p
-            h2
-            section
-            h2
-            div
-                button
-                button
-                button
-            p
-                20$
-                button
-*/
 function createPage(id, numImages){
-    //console.log(id);
-    //console.log(sectionPages);
 
     const divElement = document.createElement("div");
     divElement.setAttribute("class", "page is-active");
