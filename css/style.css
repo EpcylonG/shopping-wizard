@@ -234,7 +234,7 @@ li {
 
 .type-img img {
     width: 100%;
-    margin-top: 70%;
+    margin-top: 20%;
 }
 
 .big-img img {
@@ -285,7 +285,7 @@ li {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 }
 .price-product-page{
     color: black !important;
