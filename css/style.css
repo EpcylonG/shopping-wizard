@@ -230,7 +230,7 @@ li {
     }
 }
 
-/* Product Page Style */
+/* Product Page Style Magnetic */
 
 .type-img img {
     width: 100%;
@@ -263,7 +263,7 @@ li {
     margin-top: 10px;
     margin-bottom: 30px;
 }
-#product-info p{
+#product-info pre{
     color: rgba(24, 24, 24, 0.616);
     font-size: 20px;
     margin-bottom: 2px;

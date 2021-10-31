@@ -47,19 +47,29 @@ function createPage(id, numImages){
     const h1Element = document.createElement("h1");
     h1Element.textContent = folderImages[id-2];
 
-    const pElement = document.createElement("p");
-    pElement.textContent = "Characteristics:";
-    const pElement2 = document.createElement("p");
-    pElement2.textContent = "Portable and durable. Ideal for travel, outdoor activities, car, office, home, school, picnic, hot yoga, hiking, camping, etc."
-    const pElement3 = document.createElement("p");
-    pElement3.textContent = "Made of 304 stainless steel, vacuum double-layer design, safe, BPA-free and eco-friendly, odorless and easy to clean. It can keep hot or cold water for 12 hours."
-    const pElement4 = document.createElement("p");
-    pElement4.setAttribute("id", "last-p");
-    pElement4.textContent = "This vacuum water bottle is also a good container for coffee, juicer, milk, beer, drinks, and daily hydration. The best gift for relatives and friends."
+    const preElement = document.createElement("pre");
+    preElement.setAttribute("id", "last-p");
+    preElement.textContent = "Characteristics:\nSingle Layer Stainless Steel Insulation Sports Bottle." + 
+                            "\nStainless steel, without fear of collisions." + 
+                            "\nThick base, vacuum process without noise, maximize the use of space." + 
+                            "\nCarefully polished, burr-free, with the small mouth for easy drinking.";
 
-    pElement.appendChild(pElement2);
-    pElement.appendChild(pElement3);
-    pElement.appendChild(pElement4);
+    preElement.textContent = "Characteristics:\nPortable and durable. Ideal for travel, outdoor activities, car, office, home, school, picnic, hot yoga, hiking, camping, etc." +
+                            "\nMade of 304 stainless steel, vacuum double-layer design, safe, BPA-free and eco-friendly, odorless and easy to clean. It can keep hot or cold water for 12 hours." +
+                            "\nThis vacuum water bottle is also a good container for coffee, juicer, milk, beer, drinks, and daily hydration. The best gift for relatives and friends.";
+
+    preElement.textContent = "Characteristics:\nSuitable for cold water, juice, milk, milk tea, cold drinks, etc." +
+                            "\nEasy to carry, the size fits most car cup holders and bicycle bottle holders." +
+                            "\nA great choice as a gift for friends, classmates and family." +
+                            "\nIt is safe to use, tasteless, beautiful and non-toxic. Provides a relaxed and happy atmosphere.";
+
+    preElement.textContent = "Characteristics:\nStainless steel." +
+                            "\nEco-friendly." +
+                            "\nThermal insulation performance: 6-12 hours.";
+    
+
+
+
 
     const h2ColorsElement = document.createElement("h2");
     h2ColorsElement.textContent = "Colors";
@@ -99,7 +109,7 @@ function createPage(id, numImages){
 
     //product info
     sectionProductInfoElement.appendChild(h1Element);
-    sectionProductInfoElement.appendChild(pElement);
+    sectionProductInfoElement.appendChild(preElement);
     sectionProductInfoElement.appendChild(h2ColorsElement);
     sectionProductInfoElement.appendChild(sectionColorsImgElement);
     sectionProductInfoElement.appendChild(h2SizesElement);
