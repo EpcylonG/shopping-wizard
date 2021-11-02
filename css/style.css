@@ -285,6 +285,7 @@ li {
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     border-radius: 15px;
+    margin-right: 20px;
     /* margin-left: 20px; */
 }
 .price-product-page{
