@@ -239,10 +239,6 @@ li {
     margin-top: 20%;
 }
 
-.big-img img {
-    width: 100%;
-}
-
 .colors-img img {
     width: 10%;
     border-radius: 100px;
@@ -250,8 +246,8 @@ li {
 }
 
 #all-product-page {
-    display: grid;
-    grid-template-columns: 10% 45% 45%;
+    display: flex;
+    flex-direction: row;
 }
 
 #product-info {
@@ -516,9 +512,7 @@ main {
 }
 
 .accountbody {
-	background-color: ;
 	font-family: 'Open Sans', sans-serif;
-
 }
 
 .headeraccount {
@@ -625,4 +619,18 @@ main {
     align-items: center;
     
     
+}
+
+.big-img {
+    position: relative;
+    overflow: hidden;
+    min-width: 50%;
+}
+.big-img img:hover {
+    opacity: 0;
+}
+.big-img img {
+    transition: opacity 0.5s;
+    display: block;
+    width: 100%;
 }
