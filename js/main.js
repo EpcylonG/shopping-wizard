@@ -38,6 +38,34 @@ function readElementArray(elementsArray, i, parent){
     }
 }
 
+/*form swithc */
+window.onload = () => {
+    const tab_switchersy = document.querySelectorAll('[data-switchery]');
+
+    for (let i = 0; i < tab_switchersy.length; i++) {
+        const tab_switchery = tab_switchersy[i];
+        const page_idy = tab_switchery.dataset.tab;
+
+        tab_switchery.addEventListener('click', () => {
+            document.querySelector('.tabsy .taby.is-active').classList.remove('is-active');
+            tab_switchery.parentNode.classList.add('is-active');
+
+            SwitchPage(page_idy);
+        });
+    }
+}
+
+function SwitchPagey (page_idy) {
+    console.log(page_idy);
+
+    const current_pagey = document.querySelector('.pagesy .pagey.is-active');
+    current_pagey.classList.remove('is-active');
+
+    const next_pagey = document.querySelector(`.pagesy .pagey[data-pagey="${page_idy}"]`);
+    next_pagey.classList.add('is-active');
+}
+
+
 
 function createPage(id){
 
