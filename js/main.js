@@ -166,8 +166,8 @@ function addClickListener(img, main){
     }, false);
 }
 
-const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
-next_page.classList.add('is-active');
+/*const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
+next_page.classList.add('is-active');*/
 
 /*BARRA PROGESRO*/
 
