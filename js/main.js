@@ -71,6 +71,7 @@ function createPage(id){
     sectionPages.appendChild(elements[0]);
 
     const sectionBigImgElement = document.querySelector(".big-img");
+    sectionBigImgElement.addEventListener("mousemove", zoom);
     const sectionColorsImgElement = document.querySelector(".colors-img");
     const sectionTypeImgElement = document.querySelector(".type-img");
 
@@ -79,6 +80,7 @@ function createPage(id){
     
     const h1Element = document.querySelector("#bottle-name");
     h1Element.textContent = folderImages[id-2];
+
 
     const preElement = document.querySelector("#last-p");
     switch(id) {
@@ -129,6 +131,8 @@ function elem(type, elemId, elemClass){
 function createImage(folder, id, main, lineal){
     const img = document.createElement("img");
     img.setAttribute("src","assets/img/" + folder + "/1.jpg");
+    main.style.height = "100%";
+    main.style.backgroundImage = "url(" + img.src + ")";
     main.appendChild(img);
     for(let i = 0; i < numImages[id-2]; i++){
         const linealImg = document.createElement("img");
@@ -136,33 +140,34 @@ function createImage(folder, id, main, lineal){
         linealImg.setAttribute("width","100px");
         linealImg.setAttribute("height","100px");
         linealImg.setAttribute("src","assets/img/" + folder + "/" + (i+1) + ".jpg");
-        addHoverListener(linealImg, img);
+        addHoverListener(linealImg, img, main);
         lineal.appendChild(linealImg); 
     }
 }
 
-function addHoverListener(img, main){
-    img.addEventListener("mouseenter", function( event ) {
-        setImg(event.target.src, main);
+function addHoverListener(lineal, img, main){
+    lineal.addEventListener("mouseenter", function( event ) {
+        setImg(event.target.src, img, main);
     }, false);
 }
 
-function setImg(src, main){
-    main.setAttribute("src", src);
+function setImg(src, img, main){
+    img.setAttribute("src", src);
+    main.style.backgroundImage = "url(" + img.src + ")";
 }
 
 function createColors(folder, id, select, main){
     for(let i = 1; i < numImages[id-2]; i++){
         const img = document.createElement("img");
         img.setAttribute("src","assets/img/" + folder + "/" + (i+1) + ".jpg");
-        addClickListener(img, main.children[0]);
+        addClickListener(img, main.children[0], main);
         select.appendChild(img);
     }
 }
 
-function addClickListener(img, main){
+function addClickListener(img, mainInitial, main){
     img.addEventListener("click", function( event ) {
-        setImg(event.target.src, main);
+        setImg(event.target.src, mainInitial, main);
     }, false);
 }
 
@@ -222,9 +227,7 @@ function update(){
         anterior.disabled = false;
         siguiente.disabled = false;
     }
-
 }
-
 
 // innputs
 
@@ -254,7 +257,6 @@ function checkInputs() {
 		setSuccessFor(username);
 	}
 
-
 	if(emailValue === '') {
 		setErrorFor(email, 'Email cannot be blank');
 	} else if (!isEmail(emailValue)) {
@@ -267,7 +269,6 @@ function checkInputs() {
 	} else {
 		setSuccessFor(password);
 	}
-    
 	
 	if(password2Value === '') {
 		setErrorFor(password2, 'Password2 cannot be blank');
@@ -276,9 +277,6 @@ function checkInputs() {
 	} else{
 		setSuccessFor(password2);
 	}
-
-
-
 
     const names = document.getElementById('username');
 
@@ -291,13 +289,7 @@ function checkInputs() {
     else {
         setSuccessFor(username);
     }
-
-
-
-
 }
-
-
 
 function setErrorFor(input, message) {
 	const formControl = input.parentElement;
@@ -310,6 +302,16 @@ function setSuccessFor(input) {
 	const formControl = input.parentElement;
 	formControl.className = 'form-control success';
 }
+
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
+
+function zoom(e){
+    var zoomer = e.currentTarget;
+    e.offsetX ? offsetX = e.offsetX : offsetX = e.pageX;
+    e.offsetY ? offsetY = e.offsetY : offsetX = e.pageX;
+    x = offsetX / zoomer.offsetWidth*100;
+    y = offsetY / zoomer.offsetHeight*100;
+    zoomer.style.backgroundPosition = x + '% ' + y + '%';
 }
