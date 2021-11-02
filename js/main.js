@@ -41,10 +41,10 @@ function readElementArray(elementsArray, i, parent){
 
 function createPage(id){
 
-    const elements = [elem("div", null, "page is-active"), 
+    const elements = [elem("div", null, "page is-active"),
                      [elem("section", "all-product-page"),
-                        [elem("section", null, "type-img"), 
-                         elem("section", null, "big-img"), 
+                        [elem("section", null, "type-img"),
+                         elem("section", null, "big-img"),
                          elem("section", "product-info"),
                             [elem("h1", "bottle-name"),
                              elem("pre", "last-p"),
@@ -52,12 +52,12 @@ function createPage(id){
                              elem("section", null, "colors-img"),
                              elem("h2", "size-name"),
                              elem("div", "prize-button"),
-                                [elem("button", null, "prize-button"),
-                                 elem("button", null, "prize-button"),
-                                 elem("button", null, "prize-button"),
-                                ],
-                             elem("p", null, "product-page"),
-                                [elem("button", "first-buy-botton")]
+                                [elem("button", "button330", "prize-button", ),
+                                 elem("button", "button500", "prize-button"),
+                                 elem("button", "button1", "prize-button"),],
+                             elem("p", "product-page-id", "price-product-page"),
+                                [elem("p", "holahola"),
+                                    elem("button", "first-buy-botton")]
                             ]
                         ]
                     ]
@@ -117,6 +117,25 @@ function createPage(id){
 
     const buttonPriceElement = document.querySelector("#first-buy-botton");
     buttonPriceElement.textContent = "Buy";
+    const price330 = document.getElementById("button330");
+    const price500 = document.getElementById("button500")
+    const price1 = document.getElementById("button1")
+    const realPrice = document.getElementById("product-page-id");
+    const hola = document.getElementById("holahola")
+    price330.addEventListener('click', function() {
+        hola.textContent = "20€"
+    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+});
+
+price500.addEventListener('click', function() {
+    hola.textContent = "30€"
+    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+});
+
+price1.addEventListener('click', function() {
+    hola.textContent = "40€"
+    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+});
 }
 
 function elem(type, elemId, elemClass){
@@ -313,3 +332,11 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+//Product page
+
+
+
+
+
+
