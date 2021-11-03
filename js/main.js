@@ -149,7 +149,6 @@ function elem(type, elemId, elemClass){
 function createImage(folder, id, main, lineal){
     const img = document.createElement("img");
     img.setAttribute("src","assets/img/" + folder + "/1.jpg");
-    main.style.height = "100%";
     main.style.backgroundImage = "url(" + img.src + ")";
     main.appendChild(img);
     for(let i = 0; i < numImages[id-2]; i++){
@@ -188,27 +187,6 @@ function addClickListener(img, mainInitial, main){
         setImg(event.target.src, mainInitial, main);
     }, false);
 }
-
-/*const next_page = document.querySelector(`.pages .page[data-page="${page_id}"]`);
-next_page.classList.add('is-active');*/
-
-/*
-pages
-    page is-active data-page=1 //pagina 1
-        div contenedor
-            div circulo active //1
-            div circulo //2
-            div circulo //3
-            div circulo //4
-        section account tabby is-active
-            div pagey data-pagey 1
-        section addres tabby
-            div pagey data-pagey 2
-        section shipping tabby
-            div pagey data-pagey 3
-        section finish tabby
-            div pagey data-pagey 4
-*/
 
 const circulos = document.querySelectorAll('.circulo');
 const tabsy = document.querySelector(".tabsy");
@@ -352,3 +330,25 @@ else {
     messageAlert.classList.add("accept-terms-bg")
     return false
 }}
+
+
+// adrees number form
+
+function showContent() {
+    element = document.getElementById("content");
+    check = document.getElementById("check");
+    if (check.checked) {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+}
+
+function runList() {
+var select = document.getElementById("list");
+var newOption = document.createElement("option");
+
+newOption.text = document.getElementById("txtbox").value;
+select.add(newOption);
+}
