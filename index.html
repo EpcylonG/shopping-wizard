@@ -67,14 +67,20 @@
 <main>
     <section class="pages">
         <div class="page is-active" data-page="1">
-            <section class="accountbody">
-                <div class="contenedor" id="accountbody">
-                    <div class="progreso-contenedor">
-                        <div class="progreso" id="progreso"></div>
-                        <div class="circulo active">1</div>
-                        <div class="circulo">2</div>
-                        <div class="circulo">3</div>
-                        <div class="circulo">4</div>
+            <!-- circulos -->
+            <div class="contenedor" id="accountbody">
+                <div class="progreso-contenedor tabsy">
+                    <div class="circulo active taby">1</div>
+                    <div class="circulo taby">2</div>
+                    <div class="circulo taby">3</div>
+                    <div class="circulo taby">4</div>
+                </div>
+            </div> 
+            <!-- secciones -->
+            <section class="accountbody tabby is-active">
+                <div class="container324 pagey is-active" data-pagey="1">
+                    <div class="headeraccount">
+                        <h2>Create Account</h2>
                     </div>
 
                     <div class="container324">
@@ -115,10 +121,58 @@
                     </div>
                 </div>
             <div>
+                    <form id="form" class="form">
+                        <div class="form-control">
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="" id="username" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Email</label>
+                            <input type="email" placeholder="" id="email" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Password</label>
+                            <input type="password" placeholder="Password" id="password"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Password check</label>
+                            <input type="password" placeholder="Password two" id="password2"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <button>Submit</button>
+                    </form>
+                </div>
+            </section>
+            <section class="address tabby">
+                <div class="pagey" data-pagey="2">
+                    2
+                </div>
+            </section>
+            <section class="shipping tabby">
+                <div class="pagey" data-pagey="3">
+                    3
+                </div>
+            </section>
+            <section class="finish tabby">
+                <div class="pagey" data-pagey="4">
+                    4
+                </div>
+            </section>
+            <div> 
                 <button class="btn" id="anterior" disabled>Anterior</button>
                 <button class="btn" id="siguiente">Siguiente</button>
             </div>
-        </section>
         </div>
     </section>
 </main>
