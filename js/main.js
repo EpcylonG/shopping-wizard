@@ -334,3 +334,21 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+//button terms and conditions
+
+function validationR() {
+    var valid = false;
+    var termsconditions = document.getElementById("termsconditions")
+    var messageAlert = document.getElementById("accept-terms")
+    if (termsconditions.checked){
+        valid = true;
+}
+if (valid) {
+    alert("FINISH THE THANK YOU PAGE")
+}
+else {
+    messageAlert.innerHTML = "Please accept the terms and conditions"
+    messageAlert.classList.add("accept-terms-bg")
+    return false
+}}
