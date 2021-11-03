@@ -312,3 +312,26 @@ function setSuccessFor(input) {
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+
+
+// adrees number form
+
+function showContent() {
+    element = document.getElementById("content");
+    check = document.getElementById("check");
+    if (check.checked) {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+}
+
+function runList() {
+var select = document.getElementById("list");
+var newOption = document.createElement("option");
+
+newOption.text = document.getElementById("txtbox").value;
+select.add(newOption);
+}
