@@ -614,12 +614,20 @@ main {
 	max-width: 100%;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     justify-content: center;
     align-items: center;
-    
-    
 }
+.tabby{
+    display: none;
+}
+.tabby.is-active{
+    display: block;
+}
+
+
+
+
 
 .big-img {
     position: relative;
