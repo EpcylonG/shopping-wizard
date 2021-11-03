@@ -156,7 +156,74 @@
             </section>
             <section class="address tabby">
                 <div class="pagey" data-pagey="2">
-                    2
+                    <div class="container324">
+                        <div class="headeraccount">
+                            <h2>Address</h2>
+                        </div>
+                    <form id="form" class="form">
+                        <div class="form-control">
+                            <label for="firstname">First Name</label>
+                            <input type="text" placeholder="" id="firstname" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Last Name</label>
+                            <input type="lastname" placeholder="" id="lastname" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Address </label>
+                            <input type="address" placeholder="address" id="address"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <b>This is not my current address. Please send it to another</b>
+                    <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                    <div id="content" style="display: none;">
+                        <div class="form-control">
+                            <label for="username">
+                                Shipping address</label>
+                            <input type="password" placeholder="Password" id="password"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                      </div>
+                        <div class="form-control">
+                            <label for="Date of Birth">
+                                Enter the Date:
+                                <input type="date" name="date">
+                            </label>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="postalcode">Address </label>
+                            <input type="address" placeholder="postalcode" id="postalcode"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div>
+                            Country:
+                            <SELECT NAME="list" ID="list">
+                              <OPTION>Andorra</OPTION>
+                                <OPTION>España</OPTION>
+                                <OPTION>Francia</OPTION>
+                                <OPTION>Alemania</OPTION>
+                                <OPTION>Grecia</OPTION>
+                              </SELECT>
+                            <input type="text" id="txtbox">
+                            <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
+                          </div>
+                    </form>
+                    </div>
                 </div>
             </section>
             <section class="shipping tabby">
