@@ -76,7 +76,22 @@
                     <div class="circulo taby">4</div>
                 </div>
             </div> 
-            <!-- secciones -->
+            <!-- secciones 
+            <div>Registration closes in <span id="time">05:00</span> minutes!</div>
+            <div onload = "timeout()">-->
+                <div id="divexemple" style="visibility: hidden; height: 150px; width:250px; background-color: aqua font-size: 15px
+                ;">Registration proces closes in 05:00 minutes
+                </div>
+                <div id="divexemple2" style="visibility: hidden;">Registration proces closes in 04:00 minutes
+                </div>
+                <div id="divexemple3" style="visibility: hidden;">Registration proces closes in 03:00 minutes
+                </div>
+                <div id="divexemple4" style="visibility: hidden;">Registration proces closes in 02:00 minutes
+                </div>
+                <div id="divexemple5" style="visibility: hidden;">Registration proces closes in 01:00 minutes
+                </div>
+                <div id="divexemple6" style="visibility: hidden;">Time is over. Redirecting to the Main Page
+                </div>
             <section class="accountbody tabby is-active">
                 <div class="container324 pagey is-active" data-pagey="1">
                     <div class="headeraccount">
@@ -186,17 +201,17 @@
                     <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
                     <div id="content" style="display: none;">
                         <div class="form-control">
-                            <label for="username">
+                            <label for="username"><br>
                                 Shipping address</label>
                             <input type="password" placeholder="Password" id="password"/>
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
-                        </div>
+                        </div><br>
                       </div>
                         <div class="form-control">
                             <label for="Date of Birth">
-                                Enter the Date:
+                                Birthday:
                                 <input type="date" name="date">
                             </label>
                             <i class="fas fa-check-circle"></i>
@@ -292,6 +307,7 @@
     <h2 id="total-final">
         Total: <span>24.54€</span>
     </h2>
+</div>
 </section>
 </article>
     <footer class="footer-container">

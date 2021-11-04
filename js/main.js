@@ -357,3 +357,167 @@ var newOption = document.createElement("option");
 newOption.text = document.getElementById("txtbox").value;
 select.add(newOption);
 }
+
+
+
+// timer 
+
+
+function showdiv()
+  {
+      document.getElementById("divexemple").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv()", 2000);
+
+  function hidediv()
+  {
+      document.getElementById("divexemple").style.visibility="hidden";
+  }
+  setTimeout("hidediv()", 7000);
+  
+    
+
+
+  function showdiv2()
+  {
+      document.getElementById("divexemple2").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv2()", 60000);
+
+  function hidediv2()
+  {
+      document.getElementById("divexemple2").style.visibility="hidden";
+  }
+  setTimeout("hidediv2()", 65000);
+
+
+
+
+  function showdiv3()
+  {
+      document.getElementById("divexemple3").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv3()", 120000);
+
+  function hidediv3()
+  {
+      document.getElementById("divexemple3").style.visibility="hidden";
+  }
+  setTimeout("hidediv3()", 125000);
+
+
+
+  function showdiv4()
+  {
+      document.getElementById("divexemple4").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv4()", 180000);
+
+  function hidediv4()
+  {
+      document.getElementById("divexemple4").style.visibility="hidden";
+  }
+  setTimeout("hidediv4()", 185000);
+
+
+
+
+  function showdiv5()
+  {
+      document.getElementById("divexemple5").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv5()", 240000);
+
+  function hidediv5()
+  {
+      document.getElementById("divexemple5").style.visibility="hidden";
+  }
+  setTimeout("hidediv5()", 245000);
+
+
+
+  function showdiv6()
+  {
+      document.getElementById("divexemple6").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv6()", 300000);
+
+  function hidediv6()
+  {
+      document.getElementById("divexemple6").style.visibility="hidden";
+  }
+  setTimeout("hidediv6()", 305000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* no funciona guardado por si acaso
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+function timeout()
+{
+setTimeout("cerrar()", 30000)
+}
+
+function cerrar() {
+var ventana = window.self
+ventana.opener = window.self
+ventana.close()}
+
+window.alert("Texto a mostrar");
+*/
+
+
+
+
+
+
+
+
+  
