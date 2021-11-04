@@ -234,6 +234,10 @@ li {
 
 /* Product Page Style Magnetic */
 
+.type-img{
+    min-width: 120px;
+}
+
 .type-img img {
     width: 100%;
     margin-top: 20%;
@@ -614,7 +618,6 @@ main {
 	max-width: 100%;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
-    /* min-height: 100vh; */
     justify-content: center;
     align-items: center;
 }
@@ -623,7 +626,7 @@ main {
 #buy-complete {
     box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
     width: 400px;
-    min-height: 100vh;
+    min-height: 85vh;
     background-color: white;
     border-radius: 5px;
 }
@@ -632,6 +635,7 @@ main {
 }
 #buy-complete {
     font-family: "Open Sans", sans-serif;
+    margin-left: 25%;
 }
 #buy-complete h1 {
     border-bottom: 1px solid #f0f0f0;
@@ -672,7 +676,7 @@ main {
 .content-buy h2 span {
     font-weight: bold;
 }
-#buy-complete button{
+#buy-complete input[type=submit]{
     margin-top: 40px;
     background-color: #8e44ad;
 	border: 2px solid #8e44ad;
@@ -682,7 +686,7 @@ main {
 	font-family: inherit;
 	font-size: 16px;
 	padding: 10px;
-    margin-left: 33%;
+    margin-left: 28%;
 	width: 120px;
 }
 #order-complete {
@@ -716,6 +720,18 @@ main {
     display: grid;
     grid-template-columns: 60% 40%;
 }
+#main-final form{
+    margin-left: 10%;
+}
+#accept-terms {
+    color: #ce4949;
+}
+.accept-terms-bg {
+    margin: 20px;
+    padding: 13px 0px 13px 10px;
+    border-radius: 4px;
+    background-color: rgba(255, 192, 203, 0.5);
+}
 
 /* parte form*/
 .tabby{
@@ -726,14 +742,53 @@ main {
 }
 .big-img {
     position: relative;
-    overflow: hidden;
-    min-width: 50%;
+    min-width: 580px;
+    max-height: 580px;
+    background-repeat: no-repeat;
 }
 .big-img img:hover {
     opacity: 0;
 }
 .big-img img {
     transition: opacity 0.5s;
-    display: block;
-    width: 100%;
+    min-width: 580px;
+    max-height: 580px;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+  
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
