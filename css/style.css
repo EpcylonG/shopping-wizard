@@ -676,7 +676,12 @@ main {
 .content-buy h2 span {
     font-weight: bold;
 }
-#buy-complete input[type=submit]{
+#date-arrive {
+    margin: 5px 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 192, 203, 0.5);
+}
+#buy-complete button{
     margin-top: 40px;
     background-color: #8e44ad;
 	border: 2px solid #8e44ad;
@@ -686,24 +691,44 @@ main {
 	font-family: inherit;
 	font-size: 16px;
 	padding: 10px;
-    margin-left: 28%;
+    margin-left: 33%;
 	width: 120px;
 }
-#order-complete {
+.order-complete {
     box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
     width: 300px;
     max-height: 27vh;
     background-color: white;
     border-radius: 5px;
+    margin-bottom: 50px;
 }
-#order-complete h1 {
+.order-complete h1 {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
     padding: 20px 40px;
     text-align: center;
     font-size: 15px;
 }
-#order-complete h2 {
+.order-complete h2 {
+    text-align: center;
+    padding: 15px 0px;
+}
+#order-complete2 {
+    box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+    width: 300px;
+    max-height: 27vh;
+    background-color: white;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+#order-complete2 h1 {
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 15px;
+}
+#order-complete2 h2 {
     text-align: center;
     padding: 15px 0px;
 }
@@ -711,9 +736,10 @@ main {
     border-bottom: 1px solid #f0f0f0;
 }
 #total-final {
-    margin-top: 20px;
+    margin: 20px;
+    padding-bottom: 30px;
 }
-#order-complete h2 span {
+.order-complete h2 span {
     font-weight: bold;
 }
 #main-final {
@@ -731,6 +757,18 @@ main {
     padding: 13px 0px 13px 10px;
     border-radius: 4px;
     background-color: rgba(255, 192, 203, 0.5);
+}
+#return-button {
+    display: none;
+    margin-top: 40px;
+    font-weight: 100;
+	border-radius: 4px;
+	color: black;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	width: 68%;
+    height: 10%;
 }
 
 /*Shipping Page*/

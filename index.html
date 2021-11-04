@@ -291,18 +291,18 @@
                                         <h4>
                                             Estimate delivery date:
                                         </h4>
-                                        <p>between tal tal tal</p>
-                                        <p>and tal tal</p>
+                                        <p id="date-arrive"></p>
                                     </div>
                                 </div>
                                 <form name="formTerms" onsubmit="return validationR()">
                                     <input type="checkbox" id="termsconditions" value="Termsconditions">
                                     <label for=""> I have read and I accept the terms and conditions</label><br>
-                                    <input type="submit" value="Buy Now">
                                 </form>
+                                <button onclick="validationR()">Buy Now</button>
                                 <p id="accept-terms"></p>
                             </section>
-                            <section id="order-complete">
+                            <div>
+                            <section class="order-complete">
                                 <h1>
                                     Your order
                                 </h1>
@@ -318,6 +318,19 @@
                                     Total: <span>24.54€</span>
                                 </h2>
                             </section>
+                            <section id="order-complete2">
+                                <h1 id="h1ordered">
+                                    Waiting for your buy
+                                </h1>
+                                <h2 class="border-bot" id="h2ordered">
+                                </h2>
+                                <h2 id="h22ordered">
+                                </h2>
+                            </section>
+                            <button id="return-button" onclick="goMain()">
+                                Main Page
+                            </button>
+                        </div>
                         </article>
                     </div>
                 </section>
