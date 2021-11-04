@@ -422,6 +422,9 @@ main {
 .pages .page.is-active {
     display: block;
 }
+#list {
+    margin-right: 10px;
+}
 
 /*FORM PAGE*/
 
@@ -438,6 +441,7 @@ main {
     margin-bottom: 30px;
     max-width: 100%;
     width: 1000px;
+    margin-left: 15%;
 }
 
 
