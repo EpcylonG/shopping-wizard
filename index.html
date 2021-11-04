@@ -228,7 +228,38 @@
             </section>
             <section class="shipping tabby">
                 <div class="pagey" data-pagey="3">
-                    3
+                    <section id="shipping-main">
+                        <h1>
+                            Shipping
+                        </h1>
+                        <h2>
+                            Shipping type
+                        </h2>
+                        <form action="">
+                            <input type="radio" value="free" name="shipment" onclick="appearPremium(0)">
+                            <label for="free">Free shipment (72H)</label><br>
+                            <input type="radio" value="extra" name="shipment" onclick="appearPremium(1)">
+                            <label for="extra">Extra shipping (48H) <span>4,99€</span></label><br>
+                            <input id="input-premium"type="radio" value="premium" name="shipment" onclick="appearPremium(2)">
+                            <label for="premium">Premium (24H) <span>9,99€</span></label><br>
+                        </form>
+                    <div id="appears-premium">
+                        <h3 id="premium-h3">Your order will arrive:
+                        </h3>
+                        <h4 id="premium-h4">Estimate Delivery Date:
+                        </h4>
+                        <p id="premium-p" ></br>
+                        </p>
+                    </div>
+                        <input type="checkbox" onclick="appearGift()" id="check-gift">
+                        <label for="gift">Is it a gift?</label><br>
+                        <div id="appears-gift">
+                        <label for="gift msg">Gift message</label><br>
+                        <textarea name="gift" id="text-gift" cols="25" rows="8"></textarea><br>
+                        <label for="gift img">Gift wrapper image</label><br>
+                        <input type="file" name="photo-wrapper" id="photo-wrapper">
+                    </div>
+                    </section>
                 </div>
             </section>
             <section class="finish tabby">
