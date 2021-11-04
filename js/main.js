@@ -566,6 +566,7 @@ function showdiv()
 
 
 
+
 /* no funciona guardado por si acaso
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
