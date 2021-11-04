@@ -1,8 +1,13 @@
 const sectionPages = document.querySelector(".pages");
+const modal = document.querySelector("#myModal");
+const modalContent = document.querySelector(".modal-content");
 
-const numImages = [5,5,6,6];
-const folderImages = ["animal-kingdom-bottle", "magnetic-bottle", "portable-cup-bottle", "smooth-bottle"];
-let price;
+const numImages = [5,5,7,6];
+const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "5_Panda", "1"], 
+                      ["magnetic-bottle", "2_Black", "3_Cyan", "4_Purple", "5_Blue", "1"],
+                      ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"], 
+                      ["smooth-bottle", "2_Blue", "3_Cyan", "4_Green", "5_Orange", "6_Pink", "1"]];
+let color, size, price ;
 
 window.onload = () => {
     const tab_switchers = document.querySelectorAll('[data-switcher]');
@@ -36,6 +41,16 @@ function readElementArray(elementsArray, i, parent){
             }
         } else { elementsArray[0].appendChild(elementsArray[i][j]); }
     }
+}
+
+function bottleName(name){
+    name = name[0].split("-");
+    let finalName = "";
+    for(let i = 0; i < name.length; i++){
+        if(i === undefined) return;
+        finalName += name[i].charAt(0).toUpperCase() + name[i].substring(1) + " ";
+    }
+    return finalName;
 }
 
 function createPage(id){
@@ -74,11 +89,11 @@ function createPage(id){
     const sectionColorsImgElement = document.querySelector(".colors-img");
     const sectionTypeImgElement = document.querySelector(".type-img");
 
-    createImage(folderImages[id-2], id, sectionBigImgElement, sectionTypeImgElement);
+    createImage(folderImages, id, sectionBigImgElement, sectionTypeImgElement);
     createColors(folderImages[id-2], id, sectionColorsImgElement, sectionBigImgElement);
     
     const h1Element = document.querySelector("#bottle-name");
-    h1Element.textContent = folderImages[id-2];
+    h1Element.textContent = bottleName(folderImages[id-2]);
 
 
     const preElement = document.querySelector("#last-p");
@@ -118,25 +133,49 @@ function createPage(id){
 
     const buttonPriceElement = document.querySelector("#first-buy-botton");
     buttonPriceElement.textContent = "Buy";
+    //controlar que no sea undefined nigun campo
+
+    buttonPriceElement.addEventListener("click", () =>{
+        const colorElement = document.createElement("img");
+        const sizeElement = document.createElement("p");
+        const priceElement = document.createElement("p");
+        colorElement.src = color; 
+        sizeElement.textContent = size;     
+        priceElement.textContent = price;
+        console.log(price);
+        modalContent.appendChild(colorElement);
+        modalContent.appendChild(sizeElement);
+        modalContent.appendChild(priceElement);
+        
+        
+        modal.style.display = "block";
+
+    });
     const price330 = document.getElementById("button330");
     const price500 = document.getElementById("button500")
     const price1 = document.getElementById("button1")
-    const realPrice = document.getElementById("product-page-id");
     const hola = document.getElementById("holahola")
-    price330.addEventListener('click', function() {
-        hola.textContent = "20€"
-    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
-});
 
-price500.addEventListener('click', function() {
-    hola.textContent = "30€"
-    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
-});
+    price330.addEventListener('click', function(e) {
+        hola.textContent = "20€";
+        price = hola.textContent;
+        size = e.target.textContent;
+        buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+    });
 
-price1.addEventListener('click', function() {
-    hola.textContent = "40€"
-    buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
-});
+    price500.addEventListener('click', function(e) {
+        hola.textContent = "30€";
+        price = hola.textContent;
+        size = e.target.textContent;
+        buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+    });
+
+    price1.addEventListener('click', function(e) {
+        hola.textContent = "40€";
+        price = hola.textContent;
+        size = e.target.textContent;
+        buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
+    });
 }
 
 function elem(type, elemId, elemClass){
@@ -147,18 +186,20 @@ function elem(type, elemId, elemClass){
 }
 
 function createImage(folder, id, main, lineal){
+    const i = id-2;
     const img = document.createElement("img");
-    img.setAttribute("src","assets/img/" + folder + "/1.jpg");
+    img.setAttribute("src","assets/img/" + folder[i][0] + "/" + folder[i][numImages[i]] + ".jpg");
     main.style.backgroundImage = "url(" + img.src + ")";
     main.appendChild(img);
-    for(let i = 0; i < numImages[id-2]; i++){
+    for(let j = 0; j < folder[i].length-1; j++){
         const linealImg = document.createElement("img");
         linealImg.setAttribute("class","lineal-img");
         linealImg.setAttribute("width","100px");
         linealImg.setAttribute("height","100px");
-        linealImg.setAttribute("src","assets/img/" + folder + "/" + (i+1) + ".jpg");
+        if(j == 0) linealImg.setAttribute("src","assets/img/" + folder[i][0] + "/" + folder[i][folder[i].length-1] + ".jpg");
+        else linealImg.setAttribute("src","assets/img/" + folder[i][0] + "/" + folder[i][j] + ".jpg");
+        lineal.append(linealImg);
         addHoverListener(linealImg, img, main);
-        lineal.appendChild(linealImg); 
     }
 }
 
@@ -176,7 +217,7 @@ function setImg(src, img, main){
 function createColors(folder, id, select, main){
     for(let i = 1; i < numImages[id-2]; i++){
         const img = document.createElement("img");
-        img.setAttribute("src","assets/img/" + folder + "/" + (i+1) + ".jpg");
+        img.setAttribute("src","assets/img/" + folder[0] + "/" + folder[i] + ".jpg");
         addClickListener(img, main.children[0], main);
         select.appendChild(img);
     }
@@ -184,6 +225,8 @@ function createColors(folder, id, select, main){
 
 function addClickListener(img, mainInitial, main){
     img.addEventListener("click", function( event ) {
+        //save color
+        color = event.target.src;
         setImg(event.target.src, mainInitial, main);
     }, false);
 }
@@ -406,3 +449,167 @@ var newOption = document.createElement("option");
 newOption.text = document.getElementById("txtbox").value;
 select.add(newOption);
 }
+
+
+
+// timer 
+
+
+function showdiv()
+  {
+      document.getElementById("divexemple").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv()", 2000);
+
+  function hidediv()
+  {
+      document.getElementById("divexemple").style.visibility="hidden";
+  }
+  setTimeout("hidediv()", 7000);
+  
+    
+
+
+  function showdiv2()
+  {
+      document.getElementById("divexemple2").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv2()", 60000);
+
+  function hidediv2()
+  {
+      document.getElementById("divexemple2").style.visibility="hidden";
+  }
+  setTimeout("hidediv2()", 65000);
+
+
+
+
+  function showdiv3()
+  {
+      document.getElementById("divexemple3").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv3()", 120000);
+
+  function hidediv3()
+  {
+      document.getElementById("divexemple3").style.visibility="hidden";
+  }
+  setTimeout("hidediv3()", 125000);
+
+
+
+  function showdiv4()
+  {
+      document.getElementById("divexemple4").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv4()", 180000);
+
+  function hidediv4()
+  {
+      document.getElementById("divexemple4").style.visibility="hidden";
+  }
+  setTimeout("hidediv4()", 185000);
+
+
+
+
+  function showdiv5()
+  {
+      document.getElementById("divexemple5").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv5()", 240000);
+
+  function hidediv5()
+  {
+      document.getElementById("divexemple5").style.visibility="hidden";
+  }
+  setTimeout("hidediv5()", 245000);
+
+
+
+  function showdiv6()
+  {
+      document.getElementById("divexemple6").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv6()", 300000);
+
+  function hidediv6()
+  {
+      document.getElementById("divexemple6").style.visibility="hidden";
+  }
+  setTimeout("hidediv6()", 305000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* no funciona guardado por si acaso
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+function timeout()
+{
+setTimeout("cerrar()", 30000)
+}
+
+function cerrar() {
+var ventana = window.self
+ventana.opener = window.self
+ventana.close()}
+
+window.alert("Texto a mostrar");
+*/
+
+
+
+
+
+
+
+
+  
