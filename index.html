@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" /> -->
+    <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,8 +47,14 @@
                     <li class="tab">
                         <a class="nav-link" data-switcher data-tab="5">Smooth</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+                    <li>
+                    <a class="nav-link icon"><i class="bx bx-shopping-bag" onclick="appearGift2()"></i></a>
+                        <div id="shopcart">
+                            <div id="myModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content"></div>
+                                <button>BUY ALL</button>
+                            </div></div>
                     </li>
                 </ul>
             </div>
@@ -64,10 +70,7 @@
     </nav>
 </header>
 <main>
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content"></div>
-    </div>
+    
     <section class="pages">
         <div class="page is-active" data-page="1">
             <!-- circulos -->
@@ -138,7 +141,7 @@
                         <div class="headeraccount">
                             <h2>Address</h2>
                         </div>
-                    <form id="form" class="form">
+                    <form class="form">
                         <div class="form-control">
                             <label for="firstname">First Name</label>
                             <input type="text" placeholder="" id="firstname" />
@@ -166,7 +169,7 @@
                         <div class="form-control">
                             <label for="username"><br>
                                 Shipping address</label>
-                            <input type="address" placeholder="address" id="address"/>
+                            <input type="address" placeholder="address" id="shipping-address"/>
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <small>Error message</small>
@@ -307,12 +310,12 @@
                         </article>
                     </div>
                 </section>
+                <div class="btnPrevNext">
+                    <button class="btn" id="anterior" disabled>Anterior</button>
+                    <button class="btn" id="siguiente">Siguiente</button>
+                </div>
             </section>
         </section>
-            <div>
-                <button class="btn" id="anterior" disabled>Anterior</button>
-                <button class="btn" id="siguiente">Siguiente</button>
-            </div>
         </div>
     </section>
 </section>
