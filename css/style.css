@@ -525,6 +525,16 @@ main {
 	padding: 20px 40px;
 }
 
+.shippingformform {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+}
+
+.divcheckbox {
+    padding: 20px 40px;
+}
+
 .headeraccount h2 {
 	margin: 0;
 }
@@ -784,7 +794,7 @@ main {
     border-bottom: 1px solid #f0f0f0;
     background-color: #f7f7f7;
     padding: 20px 40px;
-    text-align: center;
+    
     font-size: 18px;
 }
 #shipping-main h2{
