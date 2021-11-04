@@ -489,6 +489,9 @@ function appearPremium(x) {
     if (minutes < 10){
         minutes = "0" + minutes
     }
+    if (hours6 > 24){
+        hours6 = hours6 - 24
+    }
 
     if (x==0) premiumP.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
 
