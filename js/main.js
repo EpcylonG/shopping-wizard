@@ -357,6 +357,15 @@ function isEmail(email) {
 }
 
 //button terms and conditions
+var completeorder = document.getElementById("order-complete2")
+var orderedh1 = document.getElementById("h1ordered")
+var orderedh2 = document.getElementById("h2ordered")
+var orderedh22 = document.getElementById("h22ordered")
+var lastbutton = document.getElementById("return-button")
+
+function goMain() {
+    window.location = '/';
+}
 
 function validationR() {
     var valid = false;
@@ -366,7 +375,10 @@ function validationR() {
         valid = true;
 }
 if (valid) {
-    alert("FINISH THE THANK YOU PAGE")
+    orderedh1.textContent = "YOUR ORDER IS COMPLETE! 🥳🥳🥳"
+    orderedh2.textContent = "Thank you for your order!"
+    orderedh22.textContent = "We hope to see you again"
+    lastbutton.classList.add("show")
 }
 else {
     messageAlert.innerHTML = "Please accept the terms and conditions"
@@ -419,14 +431,43 @@ function appearPremium(x) {
 
     if (x==0) premiumP.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
 
+    if (x==0) {
+        maemia(0)
+    }
+
     if (x==1) premiumP.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
 
+    if (x==1) {
+        maemia(1)
+    }
+
     if (x==2) premiumP.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==2) {
+        maemia(2)
+    }
 }
 
 function appearGift() {
     appearOnGift.classList.toggle("show")
 }
+
+//finish page complete
+
+function maemia (x) {
+    var priceLastPage = document.getElementById("date-arrive")
+    if (x==0) {
+        priceLastPage.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+    if (x==1) {
+        priceLastPage.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+    if (x==2) {
+        priceLastPage.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+}
+
+
 
 
 // adrees number form
@@ -452,7 +493,7 @@ select.add(newOption);
 
 
 
-// timer 
+// timer
 
 
 function showdiv()
