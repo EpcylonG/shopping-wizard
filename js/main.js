@@ -1,5 +1,6 @@
 const sectionPages = document.querySelector(".pages");
 const modal = document.querySelector("#myModal");
+const modalContent = document.querySelector(".modal-content");
 
 const numImages = [5,5,7,6];
 const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "5_Panda", "1"], 
@@ -89,7 +90,6 @@ function createPage(id){
     const sectionTypeImgElement = document.querySelector(".type-img");
 
     createImage(folderImages, id, sectionBigImgElement, sectionTypeImgElement);
-    //createImage(folderImages[id-2], id, sectionBigImgElement, sectionTypeImgElement);
     createColors(folderImages[id-2], id, sectionColorsImgElement, sectionBigImgElement);
     
     const h1Element = document.querySelector("#bottle-name");
@@ -134,39 +134,45 @@ function createPage(id){
     const buttonPriceElement = document.querySelector("#first-buy-botton");
     buttonPriceElement.textContent = "Buy";
     //controlar que no sea undefined nigun campo
+
     buttonPriceElement.addEventListener("click", () =>{
+        const colorElement = document.createElement("img");
+        const sizeElement = document.createElement("p");
+        const priceElement = document.createElement("p");
+        colorElement.src = color; 
+        sizeElement.textContent = size;     
+        priceElement.textContent = price;
+        console.log(price);
+        modalContent.appendChild(colorElement);
+        modalContent.appendChild(sizeElement);
+        modalContent.appendChild(priceElement);
+        
+        
         modal.style.display = "block";
-
-        price = hola.textContent;
-        console.log("Color - " + color);
-        console.log("Size - " + size);
-        console.log("Price - " + price);
-
-
-
-
 
     });
     const price330 = document.getElementById("button330");
     const price500 = document.getElementById("button500")
     const price1 = document.getElementById("button1")
-    const realPrice = document.getElementById("product-page-id");
     const hola = document.getElementById("holahola")
 
     price330.addEventListener('click', function(e) {
         hola.textContent = "20€";
+        price = hola.textContent;
         size = e.target.textContent;
         buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
     });
 
     price500.addEventListener('click', function(e) {
         hola.textContent = "30€";
+        price = hola.textContent;
         size = e.target.textContent;
         buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
     });
 
     price1.addEventListener('click', function(e) {
         hola.textContent = "40€";
+        price = hola.textContent;
         size = e.target.textContent;
         buttonPriceElement.parentElement.insertBefore(hola, buttonPriceElement);
     });
@@ -375,7 +381,5 @@ select.add(newOption);
 
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    //modal.style.display = "none";
-  }
+  //if (event.target == modal) modal.style.display = "none";
 }
