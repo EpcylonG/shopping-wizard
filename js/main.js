@@ -604,12 +604,3 @@ ventana.close()}
 
 window.alert("Texto a mostrar");
 */
-
-
-
-
-
-
-
-
-  
