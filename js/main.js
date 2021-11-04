@@ -356,6 +356,38 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+
+
+const firstname = document.getElementById('firstname');
+
+    if (firstname.value.length >= 20) {
+        setErrorFor(firstname, 'First name must be less than 20 characters');
+    }
+    else {
+        setSuccessFor(firstname);
+    }
+
+    const lastname = document.getElementById('lastname');
+
+    if (lastname.value.length >= 20) {
+        setErrorFor(lastname, 'Last name must be less than 20 characters');
+    }
+    else {
+        setSuccessFor(lastname);
+    }
+
+    const address = document.getElementById('address');
+
+    if (address.value.length >= 50) {
+        setErrorFor(address, 'Last name must be less than 50 characters');
+    }
+    else {
+        setSuccessFor(address);
+    }
+
+
+
+
 //button terms and conditions
 
 function validationR() {
