@@ -217,14 +217,14 @@
                         </div>
                         <div>
                             Country:
-                            <SELECT NAME="list" ID="list">
-                            <OPTION>Andorra</OPTION>
+                            <SELECT NAME="list" id="list">
+                                <OPTION>Andorra</OPTION>
                                 <OPTION>España</OPTION>
                                 <OPTION>Francia</OPTION>
                                 <OPTION>Alemania</OPTION>
                                 <OPTION>Grecia</OPTION>
                             </SELECT>
-                            <input type="text" id="txtbox">
+                            <input type="tel" id="txtbox" name="phone" placeholder="000-000-000" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
                             <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
                         </div>
                     </form>
