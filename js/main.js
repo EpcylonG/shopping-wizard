@@ -374,6 +374,60 @@ else {
     return false
 }}
 
+//shiping page functions
+var premiumCheckbox = document.getElementById("input-premium")
+var premiumh3 = document.getElementById("premium-h3")
+var premiumh4 = document.getElementById("premium-h4")
+var premiumP = document.getElementById("premium-p")
+var appearOnPremium = document.getElementById("appears-premium")
+var inputPremium = document.getElementById("input-premium")
+var appearOnGift = document.getElementById("appears-gift")
+var checkedGift = document.getElementById("check.gift")
+
+const monthName = new Array()
+monthName[0] = 'January';
+monthName[1] = 'February';
+monthName[2] = 'March';
+monthName[3] = 'April';
+monthName[4] = 'May';
+monthName[5] = 'June';
+monthName[6] = 'July';
+monthName[7] = 'August';
+monthName[8] = 'September';
+monthName[9] = 'October';
+monthName[10] = 'November';
+monthName[11] = 'December';
+
+    var date = new Date();
+    let day = date.getDate();
+    let month = monthName[date.getMonth()];
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let year = date.getFullYear();
+    let day24 = day + 1
+    let hours6 = hours + 6
+    let day48 = day + 2
+    let day72 = day + 3
+
+function appearPremium(x) {
+    if (x== 0 || 1 || 2) appearOnPremium.style.display = "block"
+    else appearOnPremium.style.display = "none"
+
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }
+
+    if (x==0) premiumP.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==1) premiumP.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==2) premiumP.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+}
+
+function appearGift() {
+    appearOnGift.classList.toggle("show")
+}
+
 
 // adrees number form
 

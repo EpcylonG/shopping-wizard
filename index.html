@@ -83,6 +83,7 @@
             <!-- secciones -->
             <div id=cssdivtime>
                 <div id="divexemple" style="visibility: hidden;">Registration proces closes in 05:00 minutes
+            </div>
                 </div>
                 <div id="divexemple2" style="visibility: hidden;">Registration proces closes in 04:00 minutes
                 </div>
@@ -192,12 +193,12 @@
                         <div>
                             Country:
                             <SELECT NAME="list" ID="list">
-                              <OPTION>Andorra</OPTION>
+                            <OPTION>Andorra</OPTION>
                                 <OPTION>España</OPTION>
                                 <OPTION>Francia</OPTION>
                                 <OPTION>Alemania</OPTION>
                                 <OPTION>Grecia</OPTION>
-                              </SELECT>
+                            </SELECT>
                             <input type="text" id="txtbox">
                             <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
                         </div>
@@ -206,10 +207,57 @@
                 </div>
             </section>
             <section class="shipping tabby">
-                    <div class="pagey" data-pagey="3">
-                        3
+                <div class="pagey" data-pagey="3">
+                    <section id="shipping-main">
+                        <h1>
+                            Shipping
+                        </h1>
+                        <h2>
+                            Shipping type
+                        </h2>
+                        <form action="">
+                            <input type="radio" value="free" name="shipment" onclick="appearPremium(0)">
+                            <label for="free">Free shipment (72H)</label><br>
+                            <input type="radio" value="extra" name="shipment" onclick="appearPremium(1)">
+                            <label for="extra">Extra shipping (48H) <span>4,99€</span></label><br>
+                            <input id="input-premium"type="radio" value="premium" name="shipment" onclick="appearPremium(2)">
+                            <label for="premium">Premium (24H) <span>9,99€</span></label><br>
+                        </form>
+                    <div id="appears-premium">
+                        <h3 id="premium-h3">Your order will arrive:
+                        </h3>
+                        <h4 id="premium-h4">Estimate Delivery Date:
+                        </h4>
+                        <p id="premium-p" ></br>
+                        </p>
                     </div>
-                </section>
+                        <input type="checkbox" onclick="appearGift()" id="check-gift">
+                        <label for="gift">Is it a gift?</label><br>
+                        <div id="appears-gift">
+                        <label for="gift msg">Gift message</label><br>
+                        <textarea name="gift" id="text-gift" cols="25" rows="8"></textarea><br>
+                        <label for="gift img">Gift wrapper image</label><br>
+                        <input type="file" name="photo-wrapper" id="photo-wrapper">
+                    </div>
+                    </section>
+                </div>
+            </section>
+            <section class="finish tabby">
+                <div class="pagey" data-pagey="4">
+                    <article id="main-final">
+                        <section id="buy-complete">
+                            <h1>
+                                Your purchase
+                            </h1>
+                            <div class="title-buy">
+                                <h3>
+                                    Green Bottle
+                                </h3>
+                            </div>
+                            <div class="purchase-nogrid">
+                                <img src="assets/img/smooth-bottle/4.jpg" alt="Botella verde">
+                                <div class="content-buy">
+                        </section>
                 <section class="finish tabby">
                     <div class="pagey" data-pagey="4">
                         <article id="main-final">
@@ -264,7 +312,6 @@
                             </article>
                     </div>
                 </section>
-                
             </section>
             <div>
                 <button class="btn" id="anterior" disabled>Anterior</button>
