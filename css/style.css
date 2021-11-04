@@ -792,3 +792,17 @@ main {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
+/* Timer advise*/
+
+#cssdivtime{
+    margin-left: 10%;
+    height: 80px; 
+    width:250px; 
+    
+     font-size: 15px;
+     float: right;
+     font-weight: bold;
+}
