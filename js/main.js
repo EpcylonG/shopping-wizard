@@ -1,13 +1,31 @@
 const sectionPages = document.querySelector(".pages");
 const modal = document.querySelector("#myModal");
 const modalContent = document.querySelector(".modal-content");
+const cart = [];
+let i = 0;
+
+class Bottle {
+
+    constructor(name, src, color, size, price){
+        this.name = name;
+        this.src = src;
+        this.color = color;
+        this.size = size;
+        this.price = price;
+    }
+
+    getObject(){
+        return $this.name, $this.src, $this.color, $this.size, $this.price;
+    }
+    
+}
 
 const numImages = [5,5,7,6];
 const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "5_Panda", "1"], 
                       ["magnetic-bottle", "2_Black", "3_Cyan", "4_Purple", "5_Blue", "1"],
                       ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"], 
                       ["smooth-bottle", "2_Blue", "3_Cyan", "4_Green", "5_Orange", "6_Pink", "1"]];
-let color, size, price ;
+let color = "", size = "", price = "" ;
 
 window.onload = () => {
     const tab_switchers = document.querySelectorAll('[data-switcher]');
@@ -27,6 +45,9 @@ window.onload = () => {
 
 function switchPage (page_id) {
     sectionPages.innerHTML = "";
+    color = "";
+    size = "";
+    price = "";
     if(page_id != 1) createPage(page_id, numImages[page_id-2]);
 }
 
@@ -136,19 +157,27 @@ function createPage(id){
     //controlar que no sea undefined nigun campo
 
     buttonPriceElement.addEventListener("click", () =>{
-        const colorElement = document.createElement("img");
+        if(color == "" || size == "") return;
+
+        const srcElement = document.createElement("img");
+        srcElement.setAttribute("id", "rabia");
         const sizeElement = document.createElement("p");
         const priceElement = document.createElement("p");
-        colorElement.src = color; 
+        srcElement.src = color; 
         sizeElement.textContent = size;     
         priceElement.textContent = price;
-        console.log(price);
-        modalContent.appendChild(colorElement);
+
+        let object = new Bottle(bottleName(folderImages[id-2]), color, color.split("_")[1].split(".")[0], size, price);
+        cart[i] = object;
+        i++;
+
+        modalContent.appendChild (srcElement);
         modalContent.appendChild(sizeElement);
         modalContent.appendChild(priceElement);
         
         
         modal.style.display = "block";
+        console.log(cart);
 
     });
     const price330 = document.getElementById("button330");
@@ -475,8 +504,8 @@ function showContent() {
 }
 
 function runList() {
-var select = document.getElementById("list");
-var newOption = document.createElement("option");
+    var select = document.getElementById("list");
+    var newOption = document.createElement("option");
 
 newOption.text = document.getElementById("txtbox").value;
 select.add(newOption);
@@ -598,6 +627,7 @@ function showdiv()
 
 
 
+
 /* no funciona guardado por si acaso
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -636,12 +666,3 @@ ventana.close()}
 
 window.alert("Texto a mostrar");
 */
-
-
-
-
-
-
-
-
-  
