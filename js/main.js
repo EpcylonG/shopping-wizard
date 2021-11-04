@@ -403,6 +403,60 @@ else {
     return false
 }}
 
+//shiping page functions
+var premiumCheckbox = document.getElementById("input-premium")
+var premiumh3 = document.getElementById("premium-h3")
+var premiumh4 = document.getElementById("premium-h4")
+var premiumP = document.getElementById("premium-p")
+var appearOnPremium = document.getElementById("appears-premium")
+var inputPremium = document.getElementById("input-premium")
+var appearOnGift = document.getElementById("appears-gift")
+var checkedGift = document.getElementById("check.gift")
+
+const monthName = new Array()
+monthName[0] = 'January';
+monthName[1] = 'February';
+monthName[2] = 'March';
+monthName[3] = 'April';
+monthName[4] = 'May';
+monthName[5] = 'June';
+monthName[6] = 'July';
+monthName[7] = 'August';
+monthName[8] = 'September';
+monthName[9] = 'October';
+monthName[10] = 'November';
+monthName[11] = 'December';
+
+    var date = new Date();
+    let day = date.getDate();
+    let month = monthName[date.getMonth()];
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let year = date.getFullYear();
+    let day24 = day + 1
+    let hours6 = hours + 6
+    let day48 = day + 2
+    let day72 = day + 3
+
+function appearPremium(x) {
+    if (x== 0 || 1 || 2) appearOnPremium.style.display = "block"
+    else appearOnPremium.style.display = "none"
+
+    if (minutes < 10){
+        minutes = "0" + minutes
+    }
+
+    if (x==0) premiumP.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==1) premiumP.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==2) premiumP.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+}
+
+function appearGift() {
+    appearOnGift.classList.toggle("show")
+}
+
 
 // adrees number form
 
@@ -421,6 +475,170 @@ function runList() {
     var select = document.getElementById("list");
     var newOption = document.createElement("option");
 
-    newOption.text = document.getElementById("txtbox").value;
-    select.add(newOption);
+newOption.text = document.getElementById("txtbox").value;
+select.add(newOption);
 }
+
+
+
+// timer 
+
+
+function showdiv()
+  {
+      document.getElementById("divexemple").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv()", 2000);
+
+  function hidediv()
+  {
+      document.getElementById("divexemple").style.visibility="hidden";
+  }
+  setTimeout("hidediv()", 7000);
+  
+    
+
+
+  function showdiv2()
+  {
+      document.getElementById("divexemple2").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv2()", 60000);
+
+  function hidediv2()
+  {
+      document.getElementById("divexemple2").style.visibility="hidden";
+  }
+  setTimeout("hidediv2()", 65000);
+
+
+
+
+  function showdiv3()
+  {
+      document.getElementById("divexemple3").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv3()", 120000);
+
+  function hidediv3()
+  {
+      document.getElementById("divexemple3").style.visibility="hidden";
+  }
+  setTimeout("hidediv3()", 125000);
+
+
+
+  function showdiv4()
+  {
+      document.getElementById("divexemple4").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv4()", 180000);
+
+  function hidediv4()
+  {
+      document.getElementById("divexemple4").style.visibility="hidden";
+  }
+  setTimeout("hidediv4()", 185000);
+
+
+
+
+  function showdiv5()
+  {
+      document.getElementById("divexemple5").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv5()", 240000);
+
+  function hidediv5()
+  {
+      document.getElementById("divexemple5").style.visibility="hidden";
+  }
+  setTimeout("hidediv5()", 245000);
+
+
+
+  function showdiv6()
+  {
+      document.getElementById("divexemple6").style.visibility="visible";
+      
+  }
+  setTimeout("showdiv6()", 300000);
+
+  function hidediv6()
+  {
+      document.getElementById("divexemple6").style.visibility="hidden";
+  }
+  setTimeout("hidediv6()", 305000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* no funciona guardado por si acaso
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
+
+
+
+window.onload = function () {
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+function timeout()
+{
+setTimeout("cerrar()", 30000)
+}
+
+function cerrar() {
+var ventana = window.self
+ventana.opener = window.self
+ventana.close()}
+
+window.alert("Texto a mostrar");
+*/
+
+
+
+
+
+
+
+
+  

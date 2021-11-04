@@ -79,8 +79,22 @@
                     <div class="circulo taby">3</div>
                     <div class="circulo taby">4</div>
                 </div>
-            </div>
+            </div> 
             <!-- secciones -->
+            <div id=cssdivtime>
+                <div id="divexemple" style="visibility: hidden;">Registration proces closes in 05:00 minutes
+                </div>
+                <div id="divexemple2" style="visibility: hidden;">Registration proces closes in 04:00 minutes
+                </div>
+                <div id="divexemple3" style="visibility: hidden;">Registration proces closes in 03:00 minutes
+                </div>
+                <div id="divexemple4" style="visibility: hidden;">Registration proces closes in 02:00 minutes
+                </div>
+                <div id="divexemple5" style="visibility: hidden;">Registration proces closes in 01:00 minutes
+                </div>
+                <div id="divexemple6" style="visibility: hidden;">Time is over. Redirecting to the Main Page
+                </div>
+            </div>
             <section class="accountbody tabby is-active">
                 <div class="container324 pagey is-active" data-pagey="1">
                     <div class="headeraccount">
@@ -119,83 +133,130 @@
                         </form>
                     </div>
                 </div>
-                <section class="address tabby">
-                    <div class="pagey" data-pagey="2">
-                        <div class="container324">
-                            <div class="headeraccount">
-                                <h2>Address</h2>
-                            </div>
-                        <form id="form2" class="form">
-                            <div class="form-control">
-                                <label for="firstname">First Name</label>
-                                <input type="text" placeholder="" id="firstname" />
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="username">Last Name</label>
-                                <input type="lastname" placeholder="" id="lastname" />
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="username">Address </label>
-                                <input type="address" placeholder="address" id="address"/>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <b>This is not my current address. Please send it to another</b>
-                        <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
-                        <div id="content" style="display: none;">
-                            <div class="form-control">
-                                <label for="username">
-                                    Shipping address</label>
-                                <input type="password" placeholder="Password" id="password3"/>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                          </div>
-                            <div class="form-control">
-                                <label for="Date of Birth">
-                                    Enter the Date:
-                                    <input type="date" name="date">
-                                </label>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="postalcode">Address </label>
-                                <input type="address" placeholder="postalcode" id="postalcode"/>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div>
-                                Country:
-                                <SELECT NAME="list" ID="list">
-                                  <OPTION>Andorra</OPTION>
-                                    <OPTION>España</OPTION>
-                                    <OPTION>Francia</OPTION>
-                                    <OPTION>Alemania</OPTION>
-                                    <OPTION>Grecia</OPTION>
-                                  </SELECT>
-                                <input type="text" id="txtbox">
-                                <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
-                              </div>
-                        </form>
+            <section class="address tabby">
+                <div class="pagey" data-pagey="2">
+                    <div class="container324">
+                        <div class="headeraccount">
+                            <h2>Address</h2>
                         </div>
+                    <form class="form">
+                        <div class="form-control">
+                            <label for="firstname">First Name</label>
+                            <input type="text" placeholder="" id="firstname" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Last Name</label>
+                            <input type="lastname" placeholder="" id="lastname" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Address </label>
+                            <input type="address" placeholder="address" id="address"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <b>This is not my current address. Please send it to another</b>
+                    <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                    <div id="content" style="display: none;">
+                        <div class="form-control">
+                            <label for="username"><br>
+                                Shipping address</label>
+                            <input type="address" placeholder="address" id="shipping-address"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div><br>
                     </div>
-                </section>
-                <section class="shipping tabby">
-                    <div class="pagey" data-pagey="3">
-                        3
+                        <div class="form-control">
+                            <label for="Date of Birth">
+                                Birthday:
+                                <input type="date" name="date">
+                            </label>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="postalcode">Address </label>
+                            <input type="address" placeholder="postalcode" id="postalcode"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div>
+                            Country:
+                            <SELECT NAME="list" ID="list">
+                            <OPTION>Andorra</OPTION>
+                                <OPTION>España</OPTION>
+                                <OPTION>Francia</OPTION>
+                                <OPTION>Alemania</OPTION>
+                                <OPTION>Grecia</OPTION>
+                            </SELECT>
+                            <input type="text" id="txtbox">
+                            <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
+                        </div>
+                    </form>
                     </div>
-                </section>
+                </div>
+            </section>
+            <section class="shipping tabby">
+                <div class="pagey" data-pagey="3">
+                    <section id="shipping-main">
+                        <h1>
+                            Shipping
+                        </h1>
+                        <h2>
+                            Shipping type
+                        </h2>
+                        <form action="">
+                            <input type="radio" value="free" name="shipment" onclick="appearPremium(0)">
+                            <label for="free">Free shipment (72H)</label><br>
+                            <input type="radio" value="extra" name="shipment" onclick="appearPremium(1)">
+                            <label for="extra">Extra shipping (48H) <span>4,99€</span></label><br>
+                            <input id="input-premium"type="radio" value="premium" name="shipment" onclick="appearPremium(2)">
+                            <label for="premium">Premium (24H) <span>9,99€</span></label><br>
+                        </form>
+                    <div id="appears-premium">
+                        <h3 id="premium-h3">Your order will arrive:
+                        </h3>
+                        <h4 id="premium-h4">Estimate Delivery Date:
+                        </h4>
+                        <p id="premium-p" ></br>
+                        </p>
+                    </div>
+                        <input type="checkbox" onclick="appearGift()" id="check-gift">
+                        <label for="gift">Is it a gift?</label><br>
+                        <div id="appears-gift">
+                        <label for="gift msg">Gift message</label><br>
+                        <textarea name="gift" id="text-gift" cols="25" rows="8"></textarea><br>
+                        <label for="gift img">Gift wrapper image</label><br>
+                        <input type="file" name="photo-wrapper" id="photo-wrapper">
+                    </div>
+                    </section>
+                </div>
+            </section>
+            <section class="finish tabby">
+                <div class="pagey" data-pagey="4">
+                    <article id="main-final">
+                        <section id="buy-complete">
+                            <h1>
+                                Your purchase
+                            </h1>
+                            <div class="title-buy">
+                                <h3>
+                                    Green Bottle
+                                </h3>
+                            </div>
+                            <div class="purchase-nogrid">
+                                <img src="assets/img/smooth-bottle/4_Green.jpg" alt="Botella verde">
+                                <div class="content-buy">
+                        </section>
                 <section class="finish tabby">
                     <div class="pagey" data-pagey="4">
                         <article id="main-final">
@@ -250,13 +311,14 @@
                             </article>
                     </div>
                 </section>
-                <div>
-                    <button class="btn" id="anterior" disabled>Anterior</button>
-                    <button class="btn" id="siguiente">Siguiente</button>
-                </div>
             </section>
+            <div>
+                <button class="btn" id="anterior" disabled>Anterior</button>
+                <button class="btn" id="siguiente">Siguiente</button>
+            </div>
         </div>
     </section>
+</section>
 </main>
     <footer class="footer-container">
         <div class="footer_link-list">

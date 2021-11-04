@@ -733,6 +733,71 @@ main {
     background-color: rgba(255, 192, 203, 0.5);
 }
 
+/*Shipping Page*/
+#shipping-main {
+    box-shadow: 0 2px 5px rgb(0 0 0 / 30%);
+    width: 400px;
+    min-height: 55vh;
+    background-color: white;
+    border-radius: 5px;
+    font-family: "Open Sans", sans-serif;
+}
+#shipping-main h1{
+    border-bottom: 1px solid #f0f0f0;
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 18px;
+}
+#shipping-main h2{
+    margin: 15px 5px 0px 5px;
+}
+#shipping-main [name=shipment]{
+    margin: 20px 3px;
+}
+#shipping-main label{
+    font-size: 12px;
+}
+#shipping-main [type=checkbox]{
+    margin: 20px 0px;
+}
+#shipping-main [type=text]{
+    height: 80px;
+}
+#shipping-main textarea{
+    margin-bottom: 20px;
+}
+#shipping-main label span{
+    font-weight: bold;
+    color: orangered;
+}
+#appears-premium {
+    display: none;
+}
+#appears-gift {
+    display: none;
+}
+#photo-wrapper {
+    margin-top: 8px;
+}
+#appears-premium h3{
+    font-weight: bold;
+    font-size: 14px;
+    margin: 5px 0px;
+}
+#appears-premium h4 {
+    font-size: 13px;
+    margin: 5px 0px;
+}
+#appears-premium p {
+    font-size: 15px;
+    margin: 5px 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 192, 203, 0.5);
+}
+.show {
+    display: block !important;
+}
 /* parte form*/
 .tabby{
     display: none;
@@ -775,4 +840,14 @@ main {
     right: 0;
     padding: 20px;
     border: 1px solid #888;
+}
+
+#cssdivtime{
+    margin-left: 10%;
+    height: 80px; 
+    width:250px; 
+    
+     font-size: 15px;
+     float: right;
+     font-weight: bold;
 }
