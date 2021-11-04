@@ -23,7 +23,7 @@ class Bottle {
 const numImages = [5,5,7,6];
 const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "5_Panda", "1"], 
                       ["magnetic-bottle", "2_Black", "3_Cyan", "4_Purple", "5_Blue", "1"],
-                      ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"], 
+                      ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"],
                       ["smooth-bottle", "2_Blue", "3_Cyan", "4_Green", "5_Orange", "6_Pink", "1"]];
 let color = "", size = "", price = "" ;
 
@@ -668,15 +668,6 @@ function showdiv()
       document.getElementById("divexemple6").style.visibility="hidden";
   }
   setTimeout("hidediv6()", 305000);
-
-
-
-
-
-
-
-
-
 
 
 
