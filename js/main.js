@@ -489,6 +489,11 @@ function appearGift() {
     appearOnGift.classList.toggle("show")
 }
 
+function appearGift2() {
+    shopcartshop.classList.toggle("show")
+}
+
+var shopcartshop = document.getElementById("shopcart");
 
 // adrees number form
 
@@ -502,6 +507,21 @@ function showContent() {
         element.style.display='none';
     }
 }
+
+function showContent2() {
+    element = document.getElementById("content2");
+    check2 = document.getElementById("check2");
+    if (check2.checked) {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+}
+
+
+
+
 
 function runList() {
     var select = document.getElementById("list");
