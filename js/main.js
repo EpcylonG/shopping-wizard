@@ -189,7 +189,7 @@ function createPage(id){
                             [elem("h2", "size-buy"),
                             elem("h2", "color-buy"),
                             elem("h4", "delivery-text-buy"),
-                            elem("pre", "delivery-time", "premium-p")]
+                            elem("p", "delivery-time", "premium-p")]
                         ]
                     ];
                     
@@ -580,6 +580,7 @@ function maemia (x) {
     if (x==2) {
         priceLastPage.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
     }
+    console.log(priceLastPage);
     shipmentDays = priceLastPage.textContent;
     const preBuy = document.querySelector("#delivery-time");
     preBuy.textContent = shipmentDays;

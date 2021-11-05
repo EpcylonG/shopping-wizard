@@ -847,6 +847,12 @@ main {
     color: rgb(0, 0, 0);
     background-color: rgba(255, 192, 203, 0.5);
 }
+.premium-p{
+    font-size: 15px;
+    margin: 5px 0px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 192, 203, 0.5);
+}
 .show {
     display: block !important;
 }
