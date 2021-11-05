@@ -274,11 +274,12 @@
                             <form id="form-buy" name="formTerms" onsubmit="return validationR()">
                                 <input type="checkbox" id="termsconditions" value="Termsconditions">
                                 <label for=""> I have read and I accept the terms and conditions</label><br>
-                                <input type="submit" value="Buy Now">
                             </form>
+                            <button id="buy-button" onclick="return validationR()">Buy Now</button>
                             <p id="accept-terms"></p>
                         </section>
-                        <section id="order-complete">
+                        <div>
+                        <section class="order-complete">
                             <h1>
                                 Your order
                             </h1>
@@ -294,7 +295,6 @@
                                 Total: <span>24.54€</span>
                             </h2>
                         </section>
-                    </article>
                     <section id="order-complete2">
                         <h1 id="h1ordered">
                             Waiting for your buy
