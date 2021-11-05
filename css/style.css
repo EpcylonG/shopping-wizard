@@ -851,3 +851,7 @@ main {
      float: right;
      font-weight: bold;
 }
+
+.btnPrevNext{
+    margin-top: 2%;
+}

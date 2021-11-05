@@ -1,6 +1,10 @@
+const tab_switchers = document.querySelectorAll('[data-switcher]');
 const sectionPages = document.querySelector(".pages");
 const modal = document.querySelector("#myModal");
 const modalContent = document.querySelector(".modal-content");
+const buyPage = document.querySelector(".buy-page");
+const purchase = document.querySelector("#buy-complete");
+const formBuy = document.querySelector("#form-buy");
 const cart = [];
 let i = 0;
 
@@ -28,7 +32,6 @@ const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "
 let color = "", size = "", price = "" ;
 
 window.onload = () => {
-    const tab_switchers = document.querySelectorAll('[data-switcher]');
 
     for (let i = 0; i < tab_switchers.length; i++) {
         const tab_switcher = tab_switchers[i];
@@ -77,26 +80,26 @@ function bottleName(name){
 function createPage(id){
 
     const elements = [elem("div", null, "page is-active"),
-                     [elem("section", "all-product-page"),
-                        [elem("section", null, "type-img"),
-                         elem("section", null, "big-img"),
-                         elem("section", "product-info"),
-                            [elem("h1", "bottle-name"),
-                             elem("pre", "last-p"),
-                             elem("h2", "color-name"),
-                             elem("section", null, "colors-img"),
-                             elem("h2", "size-name"),
-                             elem("div", "prize-button"),
-                                [elem("button", "button330", "prize-button", ),
-                                 elem("button", "button500", "prize-button"),
-                                 elem("button", "button1", "prize-button"),],
-                             elem("p", "product-page-id", "price-product-page"),
-                                [elem("p", "holahola"),
-                                    elem("button", "first-buy-botton")]
+                        [elem("section", "all-product-page"),
+                            [elem("section", null, "type-img"),
+                            elem("section", null, "big-img"),
+                            elem("section", "product-info"),
+                                [elem("h1", "bottle-name"),
+                                elem("pre", "last-p"),
+                                elem("h2", "color-name"),
+                                elem("section", null, "colors-img"),
+                                elem("h2", "size-name"),
+                                elem("div", "prize-button"),
+                                    [elem("button", "button330", "prize-button", ),
+                                    elem("button", "button500", "prize-button"),
+                                    elem("button", "button1", "prize-button"),],
+                                elem("p", "product-page-id", "price-product-page"),
+                                    [elem("p", "holahola"),
+                                        elem("button", "first-buy-botton")]
+                                ]
                             ]
                         ]
-                    ]
-                ];
+                    ];
   
    for(let i = 0; i < elements.length; i++){
        if(Array.isArray(elements[i])) {
@@ -151,12 +154,16 @@ function createPage(id){
     const bottleSize = ["330mL", "500mL", "1L"];
     const buttonSizeElement = document.querySelectorAll(".prize-button");
     for(let i = 0; i < buttonSizeElement.length; i++) { buttonSizeElement[i].textContent = bottleSize[i]; }
-
+    
     const buttonPriceElement = document.querySelector("#first-buy-botton");
     buttonPriceElement.textContent = "Buy";
     //controlar que no sea undefined nigun campo
-
+    
     buttonPriceElement.addEventListener("click", () =>{
+        
+        sectionPages.innerHTML = "";
+        buyPage.classList.add("is-active");
+        sectionPages.appendChild(buyPage);
         if(color == "" || size == "") return;
 
         const srcElement = document.createElement("img");
@@ -166,20 +173,60 @@ function createPage(id){
         srcElement.src = color; 
         sizeElement.textContent = size;     
         priceElement.textContent = price;
-
         let object = new Bottle(bottleName(folderImages[id-2]), color, color.split("_")[1].split(".")[0], size, price);
         cart[i] = object;
+        console.log(cart);
         i++;
 
-        modalContent.appendChild (srcElement);
+        const buy = [elem("div", null, "title-buy"),
+                        [elem("h3", "title-buy-h3")],
+                    elem("div", null, "purchase-nogrid"),
+                        [elem("img", "img-buy"),
+                        elem("div", null, "content-buy"),
+                            [elem("h2", "size-buy"),
+                            elem("h2", "color-buy"),
+                            elem("h4", "delivery-text-buy"),
+                            elem("pre")]
+                        ]
+                    ];
+                    
+        for(let o = 0; o < cart.length; o++){
+            for(let i = 0; i < buy.length; i++){
+                if(!Array.isArray(buy[i])) formBuy.parentElement.insertBefore(buy[i], formBuy);
+                else {
+                    for(let j = 0; j < buy[i].length; j++){
+                        if(!Array.isArray(buy[i][j])) buy[i-1].appendChild(buy[i][j]);
+                        else {
+                            for(let k = 0; k < buy[i][j].length; k++){
+                                if(!Array.isArray(buy[i][j][k])) buy[i][j-1].appendChild(buy[i][j][k]);
+                            }
+                        }
+                    }
+                }
+            }
+            const h3Buy = document.querySelector("#title-buy-h3");
+            h3Buy.textContent = cart[o].name;
+            const imgBuy = document.querySelector("#img-buy");
+            imgBuy.src = cart[o].src;
+            const h2Buy = document.querySelector("#size-buy");
+            h2Buy.textContent = "Size: " + cart[o].size;
+            const h2Buy2 = document.querySelector("#color-buy");
+            h2Buy2.textContent = "Color: " + cart[o].color;
+            const h4Buy = document.querySelector("#delivery-text-buy");
+            h4Buy.textContent = "Estimate delivery date:";
+        }
+
+
+        modalContent.appendChild(srcElement);
         modalContent.appendChild(sizeElement);
         modalContent.appendChild(priceElement);
         
         
         modal.style.display = "block";
-        console.log(cart);
+        //console.log(cart);
 
     });
+
     const price330 = document.getElementById("button330");
     const price500 = document.getElementById("button500")
     const price1 = document.getElementById("button1")

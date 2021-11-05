@@ -70,16 +70,9 @@
     </div>
     <section class="pages">
         <div class="page is-active" data-page="1">
-            <!-- circulos -->
-            <div class="contenedor" id="accountbody">
-                <div class="progreso-contenedor tabsy">
-                    <div class="circulo active taby">1</div>
-                    <div class="circulo taby">2</div>
-                    <div class="circulo taby">3</div>
-                    <div class="circulo taby">4</div>
-                </div>
-            </div>
-            <!-- secciones -->
+
+        </div>
+        <div class="page buy-page">
             <div id=cssdivtime>
                 <div id="divexemple" style="visibility: hidden;">Registration proces closes in 05:00 minutes
                 </div>
@@ -94,44 +87,54 @@
                 <div id="divexemple6" style="visibility: hidden;">Time is over. Redirecting to the Main Page
                 </div>
             </div>
+            <!-- circulos -->
+            <div class="contenedor" id="accountbody">
+                <div class="progreso-contenedor tabsy">
+                    <div class="circulo active taby">1</div>
+                    <div class="circulo taby">2</div>
+                    <div class="circulo taby">3</div>
+                    <div class="circulo taby">4</div>
+                </div>
+            </div>
+            <!-- secciones -->
             <section class="accountbody tabby is-active">
                 <div class="container324 pagey is-active" data-pagey="1">
                     <div class="headeraccount">
                         <h2>Create Account</h2>
                     </div>
-                        <form id="form" class="form">
-                            <div class="form-control">
-                                <label for="username">Username</label>
-                                <input type="text" placeholder="" id="username" />
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="username">Email</label>
-                                <input type="email" placeholder="" id="email" />
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="username">Password</label>
-                                <input type="password" placeholder="Password" id="password"/>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <div class="form-control">
-                                <label for="username">Password check</label>
-                                <input type="password" placeholder="Password two" id="password2"/>
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-exclamation-circle"></i>
-                                <small>Error message</small>
-                            </div>
-                            <button>Submit</button>
-                        </form>
-                    </div>
+                    <form id="form" class="form">
+                        <div class="form-control">
+                            <label for="username">Username</label>
+                            <input type="text" placeholder="" id="username" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Email</label>
+                            <input type="email" placeholder="" id="email" />
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Password</label>
+                            <input type="password" placeholder="Password" id="password"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <div class="form-control">
+                            <label for="username">Password check</label>
+                            <input type="password" placeholder="Password two" id="password2"/>
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error message</small>
+                        </div>
+                        <button>Submit</button>
+                    </form>
                 </div>
+            </section>
             <section class="address tabby">
                 <div class="pagey" data-pagey="2">
                     <div class="container324">
@@ -161,17 +164,17 @@
                             <small>Error message</small>
                         </div>
                         <b>This is not my current address. Please send it to another</b>
-                    <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
-                    <div id="content" style="display: none;">
-                        <div class="form-control">
-                            <label for="username"><br>
-                                Shipping address</label>
-                            <input type="address" placeholder="address" id="shipping-address"/>
-                            <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i>
-                            <small>Error message</small>
-                        </div><br>
-                    </div>
+                        <input type="checkbox" name="check" id="check" value="1" onchange="javascript:showContent()" />
+                        <div id="content" style="display: none;">
+                            <div class="form-control">
+                                <label for="username"><br>
+                                    Shipping address</label>
+                                <input type="address" placeholder="address" id="shipping-address"/>
+                                <i class="fas fa-check-circle"></i>
+                                <i class="fas fa-exclamation-circle"></i>
+                                <small>Error message</small>
+                            </div><br>
+                        </div>
                         <div class="form-control">
                             <label for="Date of Birth">
                                 Birthday:
@@ -240,69 +243,65 @@
                     </section>
                 </div>
             </section>
-                <section class="finish tabby">
-                    <div class="pagey" data-pagey="4">
-                        <article id="main-final">
-                            <section id="buy-complete">
-                                <h1>
-                                    Your purchase
-                                </h1>
-                                <div class="title-buy">
-                                    <h3>
-                                        Green Bottle
-                                    </h3>
-                                </div>
-                                <div class="purchase-nogrid">
-                                    <img src="assets/img/smooth-bottle/4_Green.jpg" alt="Botella verde">
-                                    <div class="content-buy">
-                                        <h2>
-                                            Size: <span id="size-span">330ml</span>
-                                        </h2>
-                                        <h2>
-                                            Color: <span id="color-span">Green</span>
-                                        </h2>
-                                        <h4>
-                                            Estimate delivery date:
-                                        </h4>
-                                        <p>between tal tal tal</p>
-                                        <p>and tal tal</p>
-                                    </div>
-                                </div>
-                                <form name="formTerms" onsubmit="return validationR()">
-                                    <input type="checkbox" id="termsconditions" value="Termsconditions">
-                                    <label for=""> I have read and I accept the terms and conditions</label><br>
-                                    <input type="submit" value="Buy Now">
-                                </form>
-                                <p id="accept-terms"></p>
-                            </section>
-                            <section id="order-complete">
-                                <h1>
-                                    Your order
-                                </h1>
-                                <div class="border-bot">
+            <section class="finish tabby">
+                <div class="pagey" data-pagey="4">
+                    <article id="main-final">
+                        <section id="buy-complete">
+                            <h1>
+                                Your purchase
+                            </h1>
+                            <!--<div class="title-buy">
+                                <h3>
+                                    Green Bottle
+                                </h3>
+                            </div>
+                            <div class="purchase-nogrid">
+                                <div class="content-buy">
                                     <h2>
-                                        Bottle: <span>14.55€</span>
+                                        Size: <span id="size-span">330ml</span>
                                     </h2>
                                     <h2>
-                                        Type of shipping: <span>9.99€</span>
+                                        Color: <span id="color-span">Green</span>
                                     </h2>
+                                    <h4>
+                                        Estimate delivery date:
+                                    </h4>
+                                    <p>between tal tal tal</p>
+                                    <p>and tal tal</p>
                                 </div>
-                                <h2 id="total-final">
-                                    Total: <span>24.54€</span>
+                            </div>-->
+                            <form id="form-buy" name="formTerms" onsubmit="return validationR()">
+                                <input type="checkbox" id="termsconditions" value="Termsconditions">
+                                <label for=""> I have read and I accept the terms and conditions</label><br>
+                                <input type="submit" value="Buy Now">
+                            </form>
+                            <p id="accept-terms"></p>
+                        </section>
+                        <section id="order-complete">
+                            <h1>
+                                Your order
+                            </h1>
+                            <div class="border-bot">
+                                <h2>
+                                    Bottle: <span>14.55€</span>
                                 </h2>
-                            </section>
-                        </article>
-                    </div>
-                </section>
-                <div class="btnPrevNext">
-                    <button class="btn" id="anterior" disabled>Anterior</button>
-                    <button class="btn" id="siguiente">Siguiente</button>
+                                <h2>
+                                    Type of shipping: <span>9.99€</span>
+                                </h2>
+                            </div>
+                            <h2 id="total-final">
+                                Total: <span>24.54€</span>
+                            </h2>
+                        </section>
+                    </article>
                 </div>
             </section>
-        </section>
+            <div class="btnPrevNext">
+                <button class="btn" id="anterior" disabled>Anterior</button>
+                <button class="btn" id="siguiente">Siguiente</button>
+            </div>
         </div>
     </section>
-</section>
 </main>
     <footer class="footer-container">
         <div class="footer_link-list">
