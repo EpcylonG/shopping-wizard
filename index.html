@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon"> -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" /> -->
+    <link rel="shortcut icon" href="./images/logo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,6 @@
         <div class="navigation container">
             <div class="logo">
                 <img src="assets/img/logo/logo.png">
-                <h1></h1>
             </div>
 
             <div class="menu">
@@ -47,8 +46,14 @@
                     <li class="tab">
                         <a class="nav-link" data-switcher data-tab="5">Smooth</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link icon"><i class="bx bx-shopping-bag"></i></a>
+                    <li>
+                    <a class="nav-link icon"><i class="bx bx-shopping-bag" onclick="appearGift2()"></i></a>
+                        <div id="shopcart">
+                            <div id="myModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content"></div>
+                                <button>BUY ALL</button>
+                            </div></div>
                     </li>
                 </ul>
             </div>
@@ -64,13 +69,33 @@
     </nav>
 </header>
 <main>
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content"></div>
-    </div>
+    
     <section class="pages">
         <div class="page is-active" data-page="1">
+            <section>
 
+                <div class="imgmain" style="text-align: center;"><img src="assets/img/logo/logo blanco.png"></div>
+                <p class="maintxt1" text-align: center;>the sensation of pure and fresh water at every moment in your mouth</p>
+                <br>
+                <p class="maintxt2">At pure water we believe that the quality of our products must be the same as the water we drink</p>
+
+                <div class="flex-row-container">
+                    <div class="flex-row-item">ANIMAL KINGDOM</div>
+                    <div class="flex-row-item">PORTABLE CUP</div>
+                    <div class="flex-row-item">SMOOTH</div>
+                    <div class="flex-row-item"><img src="assets/img/mainpage/scrnli_4_11_2021 18-32-56.png"></div>
+                    <div class="flex-row-item"><img src="assets/img/mainpage/scrnli_4_11_2021 23-12-36.png"></div>
+                    <div class="flex-row-item"><img src="assets/img/mainpage/scrnli_4_11_2021 18-34-16.png"></div>
+                    <div class="flex-row-item">Simple & Colorful perfect for kids</div>
+                    <div class="flex-row-item">Suitable for cold water, smoothie, juice...WHATEVER</div>
+                    <div class="flex-row-item">Sophisticated and elegant perfect for work</div>
+                    <div class="flex-row-item"><button class="mainbttn" onclick="location.href='[class=nav-link data-switcher data-tab=2]'">CREATE</button></div>
+                    <div class="flex-row-item"><button class="mainbttn" onclick="location.href='[class=nav-link data-switcher data-tab=4]'">EXPLORE</button></div>
+                    <div class="flex-row-item"><button class="mainbttn" onclick="location.href='[class=nav-link data-switcher data-tab=5]'">DISCOVER</button></div>
+                </div>
+
+
+            </section>
         </div>
         <div class="page buy-page">
             <div id=cssdivtime>
@@ -193,15 +218,14 @@
                         </div>
                         <div>
                             Country:
-                            <SELECT NAME="list" ID="list">
-                            <OPTION>Andorra</OPTION>
+                            <SELECT NAME="list" id="list">
+                                <OPTION>Andorra</OPTION>
                                 <OPTION>España</OPTION>
                                 <OPTION>Francia</OPTION>
                                 <OPTION>Alemania</OPTION>
                                 <OPTION>Grecia</OPTION>
                             </SELECT>
-                            <input type="text" id="txtbox">
-                            <INPUT TYPE="button" NAME="button" VALUE="Add New" onClick="runList()" />
+                            <input type="tel" id="txtbox" name="phone" placeholder="000-000-000" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
                         </div>
                     </form>
                     </div>
@@ -210,9 +234,10 @@
             <section class="shipping tabby">
                 <div class="pagey" data-pagey="3">
                     <section id="shipping-main">
-                        <h1>
+                        <h1 class="shippingformform">
                             Shipping
                         </h1>
+                        <form class="form">
                         <h2>
                             Shipping type
                         </h2>
@@ -232,14 +257,16 @@
                         <p id="premium-p" ></br>
                         </p>
                     </div>
+                    <div class="divcheckbox">
                         <input type="checkbox" onclick="appearGift()" id="check-gift">
                         <label for="gift">Is it a gift?</label><br>
                     <div id="appears-gift">
                         <label for="gift msg">Gift message</label><br>
                         <textarea name="gift" id="text-gift" cols="25" rows="8"></textarea><br>
                         <label for="gift img">Gift wrapper image</label><br>
-                        <input type="file" name="photo-wrapper" id="photo-wrapper">
+                        <input type="file" name="photo-wrapper" id="photo-wrapper"></div>
                     </div>
+                        </form>
                     </section>
                 </div>
             </section>
@@ -250,26 +277,6 @@
                             <h1>
                                 Your purchase
                             </h1>
-                            <!--<div class="title-buy">
-                                <h3>
-                                    Green Bottle
-                                </h3>
-                            </div>
-                            <div class="purchase-nogrid">
-                                <div class="content-buy">
-                                    <h2>
-                                        Size: <span id="size-span">330ml</span>
-                                    </h2>
-                                    <h2>
-                                        Color: <span id="color-span">Green</span>
-                                    </h2>
-                                    <h4>
-                                        Estimate delivery date:
-                                    </h4>
-                                    <p>between tal tal tal</p>
-                                    <p>and tal tal</p>
-                                </div>
-                            </div>-->
                             <form id="form-buy" name="formTerms" onsubmit="return validationR()">
                                 <input type="checkbox" id="termsconditions" value="Termsconditions">
                                 <label for=""> I have read and I accept the terms and conditions</label><br>
@@ -294,12 +301,27 @@
                             </h2>
                         </section>
                     </article>
+                            <section id="order-complete2">
+                                <h1 id="h1ordered">
+                                    Waiting for your buy
+                                </h1>
+                                <h2 class="border-bot" id="h2ordered">
+                                </h2>
+                                <h2 id="h22ordered">
+                                </h2>
+                            </section>
+                            <button id="return-button" onclick="goMain()">
+                                Main Page
+                            </button>
+                        </div>
+                        </article>
+                    </div>
+                </section>
+                <div class="btnPrevNext">
+                    <button class="btn" id="anterior" disabled>Anterior</button>
+                    <button class="btn" id="siguiente">Siguiente</button>
                 </div>
             </section>
-            <div class="btnPrevNext">
-                <button class="btn" id="anterior" disabled>Anterior</button>
-                <button class="btn" id="siguiente">Siguiente</button>
-            </div>
         </div>
     </section>
 </main>

@@ -27,7 +27,7 @@ class Bottle {
 const numImages = [5,5,7,6];
 const folderImages = [["animal-kingdom-bottle", "2_Cat", "3_Deer", "4_Monkey", "5_Panda", "1"], 
                       ["magnetic-bottle", "2_Black", "3_Cyan", "4_Purple", "5_Blue", "1"],
-                      ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"], 
+                      ["portable-cup-bottle", "1_Black", "2_Blue", "3_Orange", "4_Green", "5_Pink", "6_White", "1_Black"],
                       ["smooth-bottle", "2_Blue", "3_Cyan", "4_Green", "5_Orange", "6_Pink", "1"]];
 let color = "", size = "", price = "" ;
 
@@ -432,7 +432,48 @@ function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+
+
+const firstname = document.getElementById('firstname');
+
+    if (firstname.value.length >= 20) {
+        setErrorFor(firstname, 'First name must be less than 20 characters');
+    }
+    else {
+        setSuccessFor(firstname);
+    }
+
+    const lastname = document.getElementById('lastname');
+
+    if (lastname.value.length >= 20) {
+        setErrorFor(lastname, 'Last name must be less than 20 characters');
+    }
+    else {
+        setSuccessFor(lastname);
+    }
+
+    const address = document.getElementById('address');
+
+    if (address.value.length >= 50) {
+        setErrorFor(address, 'Last name must be less than 50 characters');
+    }
+    else {
+        setSuccessFor(address);
+    }
+
+
+
+
 //button terms and conditions
+var completeorder = document.getElementById("order-complete2")
+var orderedh1 = document.getElementById("h1ordered")
+var orderedh2 = document.getElementById("h2ordered")
+var orderedh22 = document.getElementById("h22ordered")
+var lastbutton = document.getElementById("return-button")
+
+function goMain() {
+    window.location = '/';
+}
 
 function validationR() {
     var valid = false;
@@ -442,7 +483,10 @@ function validationR() {
         valid = true;
 }
 if (valid) {
-    alert("FINISH THE THANK YOU PAGE")
+    orderedh1.textContent = "YOUR ORDER IS COMPLETE! 🥳🥳🥳"
+    orderedh2.textContent = "Thank you for your order!"
+    orderedh22.textContent = "We hope to see you again"
+    lastbutton.classList.add("show")
 }
 else {
     messageAlert.innerHTML = "Please accept the terms and conditions"
@@ -492,18 +536,53 @@ function appearPremium(x) {
     if (minutes < 10){
         minutes = "0" + minutes
     }
+    if (hours6 > 24){
+        hours6 = hours6 - 24
+    }
 
     if (x==0) premiumP.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
 
+    if (x==0) {
+        maemia(0)
+    }
+
     if (x==1) premiumP.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
 
+    if (x==1) {
+        maemia(1)
+    }
+
     if (x==2) premiumP.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+
+    if (x==2) {
+        maemia(2)
+    }
 }
 
 function appearGift() {
     appearOnGift.classList.toggle("show")
 }
 
+//finish page complete
+
+function maemia (x) {
+    var priceLastPage = document.getElementById("date-arrive")
+    if (x==0) {
+        priceLastPage.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+    if (x==1) {
+        priceLastPage.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+    if (x==2) {
+        priceLastPage.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+    }
+}
+
+function appearGift2() {
+    shopcartshop.classList.toggle("show")
+}
+
+var shopcartshop = document.getElementById("shopcart");
 
 // adrees number form
 
@@ -518,6 +597,21 @@ function showContent() {
     }
 }
 
+function showContent2() {
+    element = document.getElementById("content2");
+    check2 = document.getElementById("check2");
+    if (check2.checked) {
+        element.style.display='block';
+    }
+    else {
+        element.style.display='none';
+    }
+}
+
+
+
+
+
 function runList() {
     var select = document.getElementById("list");
     var newOption = document.createElement("option");
@@ -528,7 +622,7 @@ select.add(newOption);
 
 
 
-// timer 
+// timer
 
 
 function showdiv()
@@ -621,15 +715,6 @@ function showdiv()
       document.getElementById("divexemple6").style.visibility="hidden";
   }
   setTimeout("hidediv6()", 305000);
-
-
-
-
-
-
-
-
-
 
 
 
