@@ -208,13 +208,13 @@ function createPage(id){
                 }
             }
             const h3Buy = document.querySelector("#title-buy-h3");
-            h3Buy.textContent = cart[o].name;
+            h3Buy.textContent = cart[0].name;
             const imgBuy = document.querySelector("#img-buy");
-            imgBuy.src = cart[o].src;
+            imgBuy.src = cart[0].src;
             const h2Buy = document.querySelector("#size-buy");
-            h2Buy.textContent = "Size: " + cart[o].size;
+            h2Buy.textContent = "Size: " + cart[0].size;
             const h2Buy2 = document.querySelector("#color-buy");
-            h2Buy2.textContent = "Color: " + cart[o].color;
+            h2Buy2.textContent = "Color: " + cart[0].color;
             const h4Buy = document.querySelector("#delivery-text-buy");
             h4Buy.textContent = "Estimate delivery date:";
         }
@@ -567,7 +567,7 @@ function appearGift() {
 }
 
 //finish page complete
-let shipmentDays;
+let shipmentDays, priceShipment;
 
 function maemia (x) {
     var priceLastPage = document.querySelector(".premium-p")
@@ -576,14 +576,21 @@ function maemia (x) {
     }
     if (x==1) {
         priceLastPage.textContent = "Beetween  " + day48 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day48 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+        priceShipment = 4.99;
     }
     if (x==2) {
         priceLastPage.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
+        priceShipment = 9.99;
     }
-    console.log(priceLastPage);
     shipmentDays = priceLastPage.textContent;
     const preBuy = document.querySelector("#delivery-time");
     preBuy.textContent = shipmentDays;
+    const yourOrderBuy = document.querySelector("#your-order");
+
+    yourOrderBuy.innerHTML = "<h2>Bottle: <span>" + cart[0].price + "</span></h2><h2>Type of shipping: <span>" + priceShipment + "</span></h2>";
+
+    const totalFinalBuy = document.querySelector("#total-final");
+    totalFinalBuy.innerHTML = "Total: <span>" + (parseFloat(cart[0].price) + priceShipment).toFixed(2) + "</span>";
 }
 
 function appearGift2() {
