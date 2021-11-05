@@ -905,11 +905,9 @@ main {
      font-weight: bold;
 }
 
-<<<<<<< HEAD
 .btnPrevNext{
     margin-top: 2%;
 }
-=======
 /*shop cart*/
 
 #shopcart {
@@ -920,7 +918,6 @@ main {
 /*main page*/
 
 .flex-row-container {
-    background: #;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -933,7 +930,6 @@ main {
 }
 
 .flex-row-item {
-  background-color: #;
   
   text-align: center;
   font-size: 20px;
@@ -970,7 +966,6 @@ font-weight: 550;
 
 
 .maintxt1 {
-    background-color: ;
     color: #243a6f;;
 display: inline-block;
     padding: 1.2rem 4rem;
@@ -985,7 +980,6 @@ display: inline-block;
 }
 
 .maintxt2 {
-    background-color: #;
     color: #243a6f;;
     display: inline-block;
     padding: 1.2rem 4rem;
@@ -1011,4 +1005,3 @@ display: inline-block;
 
 
 
->>>>>>> 51ef032974b098386a7b148160a1b0898ae7fe2d

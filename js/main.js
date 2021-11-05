@@ -5,6 +5,8 @@ const modalContent = document.querySelector(".modal-content");
 const buyPage = document.querySelector(".buy-page");
 const purchase = document.querySelector("#buy-complete");
 const formBuy = document.querySelector("#form-buy");
+const pureWater = document.querySelector("#pure-water");
+
 const cart = [];
 let i = 0;
 
@@ -52,6 +54,7 @@ function switchPage (page_id) {
     size = "";
     price = "";
     if(page_id != 1) createPage(page_id, numImages[page_id-2]);
+    else sectionPages.appendChild(pureWater);
 }
 
 function readElementArray(elementsArray, i, parent){
@@ -186,7 +189,7 @@ function createPage(id){
                             [elem("h2", "size-buy"),
                             elem("h2", "color-buy"),
                             elem("h4", "delivery-text-buy"),
-                            elem("pre")]
+                            elem("pre", "delivery-time", "premium-p")]
                         ]
                     ];
                     
@@ -498,7 +501,7 @@ else {
 var premiumCheckbox = document.getElementById("input-premium")
 var premiumh3 = document.getElementById("premium-h3")
 var premiumh4 = document.getElementById("premium-h4")
-var premiumP = document.getElementById("premium-p")
+var premiumP = document.querySelector(".premium-p")
 var appearOnPremium = document.getElementById("appears-premium")
 var inputPremium = document.getElementById("input-premium")
 var appearOnGift = document.getElementById("appears-gift")
@@ -564,9 +567,10 @@ function appearGift() {
 }
 
 //finish page complete
+let shipmentDays;
 
 function maemia (x) {
-    var priceLastPage = document.getElementById("date-arrive")
+    var priceLastPage = document.querySelector(".premium-p")
     if (x==0) {
         priceLastPage.textContent = "Beetween  " + day72 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day72 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
     }
@@ -576,6 +580,9 @@ function maemia (x) {
     if (x==2) {
         priceLastPage.textContent = "Beetween  " + day24 + "  of  " + month + "  of  " + year + "  " + hours + ":" + minutes +"  and  "  + day24 + "  of  " + month + "  of  " + year + "  " + hours6 + ":" + minutes
     }
+    shipmentDays = priceLastPage.textContent;
+    const preBuy = document.querySelector("#delivery-time");
+    preBuy.textContent = shipmentDays;
 }
 
 function appearGift2() {
